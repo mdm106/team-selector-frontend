@@ -45,7 +45,7 @@ class Settings extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.handleSettings({ ...this.state });
+        this.props.handleSave({ ...this.state });
     }
 
     render() {

@@ -57,7 +57,7 @@ class Settings extends Component {
         } = this.state;
 
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label for="team1Name">Team 1 Name:</label>
                     <input value={team1Name}
@@ -103,6 +103,10 @@ class Settings extends Component {
                             onChange={this.handleAbilityPick} />
                     </label>
                 </div>
+                <button className="btn btn-primary"
+                        type="submit">
+                        Submit
+                </button>
             </form>
         );
     }

@@ -60,7 +60,7 @@ class Settings extends Component {
             <form>
                 <div className="form-group">
                     <label for="team1Name">Team 1 Name:</label>
-                    <input value={this.state.team1Name}
+                    <input value={team1Name}
                            type="text"
                            className="form-control"
                            id="team1Name"
@@ -69,7 +69,7 @@ class Settings extends Component {
                 </div>
                 <div className="form-group">
                     <label for="team2Name">Team 2 Name:</label>
-                    <input value={this.state.team2Name}
+                    <input value={team2Name}
                            type="text"
                            className="form-control"
                            id="team2Name"
@@ -78,7 +78,7 @@ class Settings extends Component {
                 </div>
                 <div className="form-group">
                     <label for="teamSize">Players per team:</label>
-                    <select value={this.state.teamSize}
+                    <select value={teamSize}
                             className="form-control"
                             id="exampleFormControlSelect1"
                             onChange={this.handleTeamSize}>
@@ -99,7 +99,7 @@ class Settings extends Component {
                         <input
                             name="abilityPick"
                             type="checkbox"
-                            checked={this.state.abilityPick}
+                            checked={abilityPick}
                             onChange={this.handleAbilityPick} />
                     </label>
                 </div>

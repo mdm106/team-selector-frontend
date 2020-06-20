@@ -1,4 +1,4 @@
-import React, { component } from "react";
+import React, { Component } from "react";
 
 class Settings extends Component {
     constructor(props) {
@@ -104,8 +104,8 @@ class Settings extends Component {
                     </label>
                 </div>
             </form>
-        )
+        );
     }
-
-
 }
+
+export default Settings;

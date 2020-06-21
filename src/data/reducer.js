@@ -1,10 +1,12 @@
+import initial from "./initial";
+
 const saveSettingsReducer = (state, 
     {team1Name,
     team2Name,
     teamSize,
     abilityPick }) => {
         return {
-            ...state,
+            ...initial,
             team1Name,
             team2Name,
             teamSize,

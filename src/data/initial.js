@@ -3,7 +3,8 @@ const initial = {
     team2Name: "Team 2",
     teamSize: 5,
     abilityPick: false, 
-    players: [],
+    playerNames: [],
+    playerAbilities: [],
     team1: [],
     team2: [],
 };

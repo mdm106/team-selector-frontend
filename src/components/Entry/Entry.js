@@ -4,8 +4,8 @@ class Entry extends Component {
     constructor(props) {
         super(props);
 
-        //create array of numbers according to the teamSize 
-        let array = [...Array((props.teamSize)*2).keys()]; 
+        //create array of numbers 0-n according to the teamSize, where array.length is total number of players
+        let array = [...Array(props.teamSize*2).keys()]; 
         
         // maps over the above array to produce an array of empty objects of length of total number of players
         this.state = {
@@ -38,6 +38,10 @@ class Entry extends Component {
     }
 
     render() {
+        const { playerNames, playerAbilities } = this.state;
+        
+
+
         return 
     }
 }

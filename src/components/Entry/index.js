@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 
-import Entry from "./Registration";
+import Entry from "./Entry";
 import { updateEntries } from "../../data/actions/state";
 
-const mapStateToProps = ({ teamSize }) => {
+const mapStateToProps = ({ teamSize, abilityPick }) => {
     return {
-        teamSize
+        teamSize,
+        abilityPick
     };
 };
 

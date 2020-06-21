@@ -59,7 +59,8 @@ class Entry extends Component {
                                     type="text"
                                     className="form-control"
                                     id={`player${value}Name`}
-                                    onChange={e => this.handleNameInput(e, index)} />
+                                    onChange={e => this.handleNameInput(e, index)}
+                                    required />
                             </div>
                             {/* Ternary so that the range form elements are only included if abilityPick = true */}
                             {!abilityPick ? null :
@@ -73,7 +74,7 @@ class Entry extends Component {
                                         type="range"
                                         className="custom-range"
                                         id={`player${value}Ability`}
-                                        onChange={e => this.handleAbilityInput(e, index)} />
+                                        onChange={e => this.handleAbilityInput(e, index)}/>
                                 </div>
                             }
                         </div>

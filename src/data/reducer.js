@@ -22,7 +22,7 @@ let makePlayers = (keys, names, abilities) => {
         let object = {
             id: keys[i],
             name: names[i],
-            ability: abilities[i],
+            ability: +abilities[i], //+ used to make ability be numeric
         }
         newArray.push(object);
     }

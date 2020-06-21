@@ -12,9 +12,18 @@ const saveSettingsReducer = (state,
         }
     }
 
+const savePlayersReducer = (state, { playerNames, playerAbilities }) => {
+    return {
+        ...state,
+        playerNames,
+        playerAbilities,
+    }
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "SAVE_SETTINGS": return saveSettingsReducer(state, action);
+        case "SAVE_PLAYERS": return savePlayersReducer(state, action);
         default: return state;
     }
 }

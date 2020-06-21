@@ -5,6 +5,7 @@ import './App.css';
 import {
   Router,
   Route,
+  Switch,
 } from "react-router-dom";
 // History file imported to use ReactRouter's history functionality
 import history from "./history";
@@ -12,14 +13,23 @@ import history from "./history";
 //Component imports
 import Header from "./components/Header";
 import Settings from "./components/Settings";
+import Entry from "./components/Entry";
 
 const App = () => (
-  <>
-    <Router history={ history }>
+  <Router history={ history }>
+    <>
       <Header />
-      <Settings />
-    </Router>
-  </>
+      <Switch>
+        <Route exact path="/">
+          <Settings />
+        </Route>
+        <Route exact path="/name-entry">
+          <Entry />
+        </Route>
+      </Switch>
+      
+    </>
+  </Router>
 );
 
 export default App;

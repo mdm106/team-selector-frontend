@@ -8,10 +8,11 @@ export const saveSettings = ({ team1Name, team2Name, teamSize, abilityPick }) =>
     };
 }
 
-export const updateEntries = ({ playerNames, playerAbilities }) => {
+export const updateEntries = ({ playerNames, playerAbilities, totalPlayers }) => {
     return {
         type: "SAVE_PLAYERS",
         playerNames,
         playerAbilities,
+        totalPlayers,
     };
 }

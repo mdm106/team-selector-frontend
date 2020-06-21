@@ -9,8 +9,9 @@ class Entry extends Component {
 
         // maps over the above array to produce an array of empty objects of length of total number of players
         this.state = {
-            playerNames: array.map(() => { }),
-            playerAbilities: array.map(() => { }),
+            totalPlayers: array,
+            playerNames: array.map(() => ""),
+            playerAbilities: array.map(() => ""),
         };
 
         this.handleNameInput = this.handleNameInput.bind(this);
@@ -22,13 +23,13 @@ class Entry extends Component {
 
     handleNameInput(e, index) {
         let names = this.state.playerNames.slice();
-        names[index] = { id: index, name: e.currentTarget.value };
+        names[index] = e.currentTarget.value;
         this.setState({ playerNames: names });
     }
 
     handleAbilityInput(e, index) {
         let rankings = this.state.playerAbilities.slice();
-        rankings[index] = { id: index, ranking: e.currentTarget.value };
+        rankings[index] = e.currentTarget.value;
         this.setState({ playerAbilities: rankings });
     }
 
@@ -38,7 +39,7 @@ class Entry extends Component {
     }
 
     render() {
-        const { playerNames, playerAbilities } = this.state;
+        const { playerNames, playerAbilities, totalPlayers } = this.state;
 
         const { abilityPick } = this.props;
 
@@ -46,7 +47,7 @@ class Entry extends Component {
             <>
                 <h3>Enter Team Names Here:</h3>
                 <form onSubmit={this.handleSubmit}>
-                    {array.map((value, index) => (
+                    {totalPlayers.map((value, index) => (
                         <div className="container" key={index}>
                             <div className="form-group">
                                 <label

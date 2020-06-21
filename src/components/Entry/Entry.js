@@ -11,7 +11,7 @@ class Entry extends Component {
         this.state = {
             totalPlayers: array,
             playerNames: array.map(() => ""),
-            playerAbilities: array.map(() => ""),
+            playerAbilities: array.map(() => "50"), ///this is the default value for the range, so if the user does not move the range scroller, an ability of 50 will be given
         };
 
         this.handleNameInput = this.handleNameInput.bind(this);

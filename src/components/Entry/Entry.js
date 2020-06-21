@@ -19,7 +19,7 @@ class Entry extends Component {
         
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    ///Forms in week 9 app is important for this
+    
     handleNameInput(e, index) {
         let names = this.state.playerNames.slice();
         names[index] = { id: index, name: e.currentTarget.value };

@@ -14,11 +14,25 @@ const saveSettingsReducer = (state,
         }
     }
 
-const savePlayersReducer = (state, { playerNames, playerAbilities }) => {
+    ///helper function to take the totalPlayers, playerNames and playerAbilities arrays from local state after form completion and make them into an array of objects for use in global state. This function is called within the savePlayersReducer
+let makePlayers = (keys, names, abilities) => {
+    let newArray = [];
+
+    for (let i = 0; i < keys.length; i ++) {
+        let object = {
+            id: keys[i],
+            name: names[i],
+            ability: abilities[i],
+        }
+        newArray.push(object);
+    }
+    return newArray;
+}
+
+const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers }) => {
     return {
         ...state,
-        playerNames,
-        playerAbilities,
+        players: makePlayers(totalPlayers, playerNames, playerAbilities),
     }
 }
 

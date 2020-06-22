@@ -16,3 +16,9 @@ export const updateEntries = ({ playerNames, playerAbilities, totalPlayers }) =>
         totalPlayers,
     };
 }
+
+export const reset = () => {
+    return {
+        type: "RESET",
+    };
+};

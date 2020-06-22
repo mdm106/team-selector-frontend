@@ -59,7 +59,7 @@ class Settings extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <label for="team1Name">Team 1 Name:</label>
+                    <label htmlFor="team1Name">Team 1 Name:</label>
                     <input value={team1Name}
                            type="text"
                            className="form-control"
@@ -68,7 +68,7 @@ class Settings extends Component {
                            onChange={this.handleTeam1Name}></input>
                 </div>
                 <div className="form-group">
-                    <label for="team2Name">Team 2 Name:</label>
+                    <label htmlFor="team2Name">Team 2 Name:</label>
                     <input value={team2Name}
                            type="text"
                            className="form-control"
@@ -77,7 +77,7 @@ class Settings extends Component {
                            onChange={this.handleTeam2Name} />
                 </div>
                 <div className="form-group">
-                    <label for="teamSize">Players per team:</label>
+                    <label htmlFor="teamSize">Players per team:</label>
                     <select value={teamSize}
                             className="form-control"
                             id="exampleFormControlSelect1"
@@ -93,7 +93,7 @@ class Settings extends Component {
                         <option value="11">11</option>
                     </select>
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                     <label>
                         Select teams by ability:
                         <input

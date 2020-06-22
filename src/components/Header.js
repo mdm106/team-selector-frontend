@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => (
-    <header class="jumbotron">
+    <header className="jumbotron">
         <h1>Team Selector</h1>
     </header>
 );

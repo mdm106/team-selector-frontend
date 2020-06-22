@@ -51,7 +51,7 @@ class Entry extends Component {
                         <div className="container" key={index}>
                             <div className="form-group">
                                 <label
-                                    for={`player${value}Name`}>
+                                    htmlFor={`player${value}Name`}>
                                         {`Player ${value} Name:`}
                                 </label>
                                 <input

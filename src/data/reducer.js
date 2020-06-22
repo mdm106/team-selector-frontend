@@ -1,4 +1,5 @@
 import initial from "./initial";
+import { reset } from "./actions/state";
 
 const saveSettingsReducer = (state, 
     {team1Name,
@@ -115,10 +116,18 @@ const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers,
     }
 }
 
+const resetReducer = (state) => {
+    return {
+        ...initial,
+    }
+}
+
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "SAVE_SETTINGS": return saveSettingsReducer(state, action);
         case "SAVE_PLAYERS": return savePlayersReducer(state, action);
+        case "RESET": return resetReducer(state);
         default: return state;
     }
 }

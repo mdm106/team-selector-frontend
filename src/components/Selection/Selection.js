@@ -1,4 +1,5 @@
 import React from "react";
+import Reset from "../Reset";
 
 const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
 
@@ -21,6 +22,7 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
                 {abilityPick ? <p>Average ability: {(team.reduce((total, player) => total + player.ability, 0) / team.length).toFixed(1) }</p> : null }
                 </div>
             ))}
+        <Reset />
         </>
     );
 };

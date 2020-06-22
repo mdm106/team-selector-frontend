@@ -93,7 +93,7 @@ class Settings extends Component {
                         <option value="11">11</option>
                     </select>
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                     <label>
                         Select teams by ability:
                         <input

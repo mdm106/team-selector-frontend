@@ -2,13 +2,12 @@ import { connect } from "react-redux";
 
 import Selection from "./Selection";
 
-const mapStateToProps = ({ team1Name, team2Name, abilityPick, players, teamSize }) => {
+const mapStateToProps = ({ team1Name, team2Name, team1, team2 }) => {
     return {
         team1Name,
         team2Name,
-        abilityPick,
-        players,
-        teamSize
+        team1,
+        team2,
     };
 };
 

@@ -95,25 +95,23 @@ let equalise = (array) => {
 const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers, abilityPick }) => {
     let players = makePlayers(totalPlayers, playerNames, playerAbilities);
 
-    let team1 = [];
-    let team2 = [];
+    let teams = [];
+
     let notFifty = players.filter(player => player.ability !== 50);
+
     if( !state.abilityPick || notFifty.length === 0) {
         let shuffledPlayers = shuffleArray(players);
-        team1 = shuffledPlayers.filter((_, i) => i % 2 === 0);
-        team2 = shuffledPlayers.filter((_, i) => i % 2 !== 0);
+        let team1 = shuffledPlayers.filter((_, i) => i % 2 === 0);
+        let team2 = shuffledPlayers.filter((_, i) => i % 2 !== 0);
+        teams = [team1, team2]
     } else {
-        let both = equalise(players);
-        console.log(both);
-        team1 = both[0];
-        team2 = both[1];
+        teams = equalise(players);
     }
     
     return {
         ...state,
         players: players,
-        team1: team1,
-        team2: team2,
+        teams: teams,
     }
 }
 

@@ -4,8 +4,7 @@ const initial = {
     teamSize: 5,
     abilityPick: false, 
     players: [],
-    team1: [],
-    team2: [],
+    teams: [],
 };
 
 export default initial;

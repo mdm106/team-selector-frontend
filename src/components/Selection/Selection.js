@@ -1,0 +1,28 @@
+import React from "react";
+
+const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
+
+    return (
+        <>
+        <h2>Your team selection is:</h2>
+            {teams.map((team, index) => (
+                <div key={ index } className="card">
+                <ul className="list-group">
+                    <h3 className="card-title">{index === 0 ? team1Name : team2Name}</h3>
+                </ul>
+                {team.map((player, index) => (
+                    <li className="list-group-item" key={ index }>
+                        <p>Name: {player.name}</p>
+                        {abilityPick ?
+                        <p>Ability: {player.ability}/100</p>
+                        : null }
+                    </li>
+                ))}
+                {abilityPick ? <p>Average ability: {(team.reduce((total, player) => total + player.ability, 0) / team.length).toFixed(1) }</p> : null }
+                </div>
+            ))}
+        </>
+    );
+};
+
+export default Selection;

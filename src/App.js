@@ -14,6 +14,7 @@ import history from "./history";
 import Header from "./components/Header";
 import Settings from "./components/Settings";
 import Entry from "./components/Entry";
+import Selection from "./components/Selection";
 
 const App = () => (
   <Router history={ history }>
@@ -25,6 +26,9 @@ const App = () => (
         </Route>
         <Route exact path="/name-entry">
           <Entry />
+        </Route>
+        <Route exact path="/team-selection">
+          <Selection />
         </Route>
       </Switch>
       

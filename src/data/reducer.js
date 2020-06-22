@@ -96,7 +96,7 @@ const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers,
     let players = makePlayers(totalPlayers, playerNames, playerAbilities);
 
     let teams = [];
-
+    // function used to filter players array where score is not equal to 50. If this array is of length > 50 this indicates that the user has ranked at least one player, and thus the team selection by ability function should be used i.e. means that team selection is random if abilityPick is true but no rankings have been provided by user
     let notFifty = players.filter(player => player.ability !== 50);
 
     if( !state.abilityPick || notFifty.length === 0) {

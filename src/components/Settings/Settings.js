@@ -11,7 +11,8 @@ class Settings extends Component {
             team2Name: props.team2Name,
             teamSize: props.teamSize,
             abilityPick: props.abilityPick, 
-            namePicked: false,           
+            namePicked: false,  
+            nameConfirmed: false,         
         };
 
         this.handleTeam1Name = this.handleTeam1Name.bind(this);
@@ -64,8 +65,8 @@ class Settings extends Component {
     handleResetNameButton() {
         this.setState({
             namePicked: false,
-            team1Name: "",
-            team2Name: "",
+            team1Name: "Team 1",
+            team2Name: "Team 2",
         })
     }
 
@@ -73,6 +74,7 @@ class Settings extends Component {
         this.setState({
             team1Name: this.props.team1Name,
             team2Name: this.props.team2Name,
+            nameConfirmed: true,
         })
     }
 
@@ -83,6 +85,7 @@ class Settings extends Component {
             teamSize,
             abilityPick,
             namePicked, 
+            nameConfirmed,
         } = this.state;
 
         return (
@@ -115,7 +118,6 @@ class Settings extends Component {
                            type="text"
                            className="form-control"
                            id="team1Name"
-                           placeholder="Team 1 Name"
                            onChange={this.handleTeam1Name}></input>
                 </div>
                 <div className="form-group">
@@ -124,10 +126,11 @@ class Settings extends Component {
                            type="text"
                            className="form-control"
                            id="team2Name"
-                           placeholder="Team 2 Name"
                            onChange={this.handleTeam2Name} />
                 </div> 
                 </> : null}
+                {!namePicked || nameConfirmed ?
+                <>
                 <div className="form-group">
                     <label htmlFor="teamSize">Players per team:</label>
                     <select value={teamSize}
@@ -160,6 +163,8 @@ class Settings extends Component {
                         onClick={this.handleSubmit}>
                         Submit
                 </button>
+                </>
+                : null}
             </form>
             </>
         );

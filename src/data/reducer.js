@@ -1,5 +1,4 @@
 import initial from "./initial";
-import { reset } from "./actions/state";
 
 const saveSettingsReducer = (state, 
     {team1Name,

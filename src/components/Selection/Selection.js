@@ -6,10 +6,12 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
         <>
         <h2>Your team selection is:</h2>
             {teams.map((value, index) => (
-                <div key={ index } className="container">
-                <li>{index === 0 ? team1Name : team2Name}</li>
+                <div key={ index } className="card">
+                <ul className="list-group">
+                    <h3 className="card-title">{index === 0 ? team1Name : team2Name}</h3>
+                </ul>
                 {value.map((player, index) => (
-                    <li key={ index }>
+                    <li className="list-group-item" key={ index }>
                         <p>Name: {player.name}</p>
                         {abilityPick ?
                         <p>Ability: {player.ability}/100</p>

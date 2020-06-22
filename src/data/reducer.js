@@ -121,11 +121,20 @@ const resetReducer = (state) => {
     }
 }
 
+const saveNamesReducer = (state, {team1Name, team2Name }) => {
+    return {
+        ...state,
+        team1Name,
+        team2Name,
+    }
+}
+
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "SAVE_SETTINGS": return saveSettingsReducer(state, action);
         case "SAVE_PLAYERS": return savePlayersReducer(state, action);
+        case "SAVE_NAMES": return saveNamesReducer(state, action);
         case "RESET": return resetReducer(state);
         default: return state;
     }

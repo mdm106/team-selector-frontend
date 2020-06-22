@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 
 import Settings from "./Settings";
 import { saveSettings } from "../../data/actions/state";
+import { getTeamNames } from "../../data/actions/api";
 import history from "../../history";
 
 const mapStateToProps = ({ team1Name, team2Name, teamSize, abilityPick }) => {
@@ -22,6 +23,7 @@ const mapDispatchToProps = dispatch => {
             //go to name entry page
             history.push("/name-entry");
         },
+        handleTeamName: () => dispatch(getTeamNames()),
     };
 };
 

@@ -10,7 +10,8 @@ class Settings extends Component {
             team1Name: props.team1Name,
             team2Name: props.team2Name,
             teamSize: props.teamSize,
-            abilityPick: props.abilityPick,            
+            abilityPick: props.abilityPick, 
+            namePicked: false,           
         };
 
         this.handleTeam1Name = this.handleTeam1Name.bind(this);
@@ -19,6 +20,9 @@ class Settings extends Component {
         this.handleAbilityPick = this.handleAbilityPick.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleNameButton = this.handleNameButton.bind(this);
+        this.handleResetNameButton = this.handleResetNameButton.bind(this);
+        this.handleConfirmName = this.handleConfirmName.bind(this);
     }
 
     handleTeam1Name(e) {
@@ -48,19 +52,66 @@ class Settings extends Component {
         this.props.handleSave({ ...this.state });
     }
 
+    handleNameButton() {
+        this.props.handleTeamName();
+        this.setState((state, props) => ({
+            namePicked: true,
+            team1Name: props.team1Name,
+            team2Name: props.team2Name,
+        }));
+    }
+
+    handleResetNameButton() {
+        this.setState({
+            namePicked: false,
+            team1Name: "",
+            team2Name: "",
+        })
+    }
+
+    handleConfirmName() {
+        this.setState({
+            team1Name: this.props.team1Name,
+            team2Name: this.props.team2Name,
+        })
+    }
+
     render() {
         let {
             team1Name,
             team2Name,
             teamSize,
-            abilityPick, 
+            abilityPick,
+            namePicked, 
         } = this.state;
 
         return (
-            <form onSubmit={this.handleSubmit}>
+            <>
+            <button 
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={this.handleNameButton}>
+                    Click me for cool names!</button>
+            {namePicked ? 
+            <>
+            <h4>Your team names are:</h4>
+            <h6>{this.props.team1Name} and {this.props.team2Name}</h6>
+            <button 
+                type="button"
+                className="btn btn-primary"
+                onClick={this.handleResetNameButton}>
+                I'll choose my own thanks</button>
+            <button 
+                type="button"
+                className="btn btn-primary"
+                onClick={ this.handleConfirmName }>
+                Happy with these</button> </> : null }
+            <form>
+                {!namePicked ?
+                <>
                 <div className="form-group">
                     <label htmlFor="team1Name">Team 1 Name:</label>
-                    <input value={team1Name}
+                    <input value={namePicked ?  this.props.team1Name : team1Name}
                            type="text"
                            className="form-control"
                            id="team1Name"
@@ -69,13 +120,14 @@ class Settings extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="team2Name">Team 2 Name:</label>
-                    <input value={team2Name}
+                    <input value={namePicked ?  this.props.team2Name : team2Name}
                            type="text"
                            className="form-control"
                            id="team2Name"
                            placeholder="Team 2 Name"
                            onChange={this.handleTeam2Name} />
-                </div>
+                </div> 
+                </> : null}
                 <div className="form-group">
                     <label htmlFor="teamSize">Players per team:</label>
                     <select value={teamSize}
@@ -104,10 +156,12 @@ class Settings extends Component {
                     </label>
                 </div>
                 <button className="btn btn-primary"
-                        type="submit">
+                        type="submit"
+                        onClick={this.handleSubmit}>
                         Submit
                 </button>
             </form>
+            </>
         );
     }
 }

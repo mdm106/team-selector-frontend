@@ -22,3 +22,11 @@ export const reset = () => {
         type: "RESET",
     };
 };
+
+export const saveTeamNames = (data) => {
+    return {
+        type: "SAVE_NAMES",
+        team1Name: data[0].name,
+        team2Name: data[1].name,
+    };
+};

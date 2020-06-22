@@ -29,10 +29,33 @@ let makePlayers = (keys, names, abilities) => {
     return newArray;
 }
 
-const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers }) => {
+/// helper function to randomly shuffle an array, using Fishers-Yates Algorithm
+let shuffleArray = (array) => {
+    for(let i = array.length -1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * i);
+        const temporary = array[i];
+        array[i] = array[j];
+        array[j] = temporary;
+    }
+    return array;
+}
+
+const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers, abilityPick }) => {
+    let players = makePlayers(totalPlayers, playerNames, playerAbilities);
+
+    let team1 = [];
+    let team2 = [];
+
+    if(!abilityPick) {
+        let shuffledPlayers = shuffleArray(players);
+        team1 = shuffledPlayers.filter((_, i) => i % 2 === 0);
+        team2 = shuffledPlayers.filter((_, i) => i % 2 !== 0);
+    }
     return {
         ...state,
-        players: makePlayers(totalPlayers, playerNames, playerAbilities),
+        players: players,
+        team1: team1,
+        team2: team2,
     }
 }
 

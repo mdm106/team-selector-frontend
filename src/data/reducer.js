@@ -14,7 +14,7 @@ const saveSettingsReducer = (state,
         }
     }
 
-    ///helper function to take the totalPlayers, playerNames and playerAbilities arrays from local state after form completion and make them into an array of objects for use in global state. This function is called within the savePlayersReducer
+///helper function to take the totalPlayers, playerNames and playerAbilities arrays from local state after form completion and make them into an array of objects for use in global state. This function is called within the savePlayersReducer
 let makePlayers = (keys, names, abilities) => {
     let newArray = [];
 
@@ -40,17 +40,75 @@ let shuffleArray = (array) => {
     return array;
 }
 
+// comparator helper function for sorting array of objects by property
+let comparator = (a, b) => {
+    let abilityA = a.ability;
+    let abilityB = b.ability;
+
+    let comparison = 0;
+    if (abilityA > abilityB) {
+        comparison = 1;
+    } else if (abilityA < abilityB) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+// helper function to produce arrays of roughly equal sum
+let equalise = (array) => {
+    array.sort(comparator);
+    let setSize = array.length/2;
+    let pos1 = 0;
+    let pos2 = 0;
+    let i = array.length-1;
+
+    let sum1 = 0;
+    let sum2 = 0; 
+
+    let team1 = [];
+    let team2 =[];
+    while (pos1 < setSize && pos2 < setSize) {
+        if (sum1 < sum2) {
+           team1[pos1] = array[i];
+           pos1 += 1;
+           sum1 += array[i].ability; 
+        }
+        else {
+            team2[pos2] = array[i];
+            pos2 += 1;
+            sum2 += array[i].ability;
+        }
+        i -= 1;
+    }
+
+    if(team1.length < setSize) {
+        team1 = array.filter(val => !team2.includes(val));
+    } else if (team2.length < setSize) {
+        team2 = array.filter(val => !team1.includes(val));
+    }
+
+    let bothteams = [team1, team2];
+
+    return bothteams;
+}
+
 const savePlayersReducer = (state, { playerNames, playerAbilities, totalPlayers, abilityPick }) => {
     let players = makePlayers(totalPlayers, playerNames, playerAbilities);
 
     let team1 = [];
     let team2 = [];
-
-    if(!abilityPick) {
+    let notFifty = players.filter(player => player.ability !== 50);
+    if( !state.abilityPick || notFifty.length === 0) {
         let shuffledPlayers = shuffleArray(players);
         team1 = shuffledPlayers.filter((_, i) => i % 2 === 0);
         team2 = shuffledPlayers.filter((_, i) => i % 2 !== 0);
+    } else {
+        let both = equalise(players);
+        console.log(both);
+        team1 = both[0];
+        team2 = both[1];
     }
+    
     return {
         ...state,
         players: players,

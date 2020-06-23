@@ -18,7 +18,7 @@ import Selection from "./components/Selection";
 
 const App = () => (
   <Router history={ history }>
-    <>
+    <div class="background_image">
       <Header />
       <Switch>
         <Route exact path="/">
@@ -32,7 +32,7 @@ const App = () => (
         </Route>
       </Switch>
       
-    </>
+    </div>
   </Router>
 );
 

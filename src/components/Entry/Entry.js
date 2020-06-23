@@ -12,7 +12,7 @@ class Entry extends Component {
             totalPlayers: array,
             playerNames: array.map(() => ""),
             playerAbilities: array.map(() => "50"), ///this is the default value for the range, so if the user does not move the range scroller, an ability of 50 will be given
-            errors: {
+            formErrors: {
                 playerNames: "",
             },
             playerNamesValid: false,

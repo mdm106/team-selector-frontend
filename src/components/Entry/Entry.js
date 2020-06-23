@@ -39,6 +39,9 @@ class Entry extends Component {
         let numberOfPlayers = this.state.totalPlayers.length;
         let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index);
 
+        ///switch statement for validation of playerNames, validation for additional fields can be added as necessary
+        // boolean statements to change validation variables in state according to whether complete and unique name data has been added
+        // validation messages set onto fieldValidationErrors according to wheter related to data completeness or uniqueness, this is set in state which is sent as props to the EntryErrors component which displays the message
         switch(fieldName) {
             case "playerNames":
                 playerNamesComplete = value.indexOf("") === -1;
@@ -56,6 +59,7 @@ class Entry extends Component {
                         this.validateForm);
     }
 
+    // sets formValid in state according to whether playerNamesComplete and playerNamesUnique is true, formValid state used to determine whether submit button is enabled
     validateForm() {
         this.setState({formValid: this.state.playerNamesComplete && this.state.playerNamesUnique});
     }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import EntryErrors from "../EntryErrors/EntryErrors";
 import Input from "../FormControls/Input";
+import Button from "../Buttons/Button";
 
 class Entry extends Component {
     constructor(props) {
@@ -106,22 +107,19 @@ class Entry extends Component {
                             />
                             {/* Ternary so that the range form elements are only included if abilityPick = true */}
                             {!abilityPick ? null :
-                                <div className="form-group">
-                                    <label
-                                        htmlFor={`player${value}Ability`}>
-                                            {`Player ${value} Ability:`}
-                                    </label>
-                                    <input
-                                        value={playerAbilities[index]}
-                                        type="range"
-                                        className="custom-range"
-                                        id={`player${value}Ability`}
-                                        onChange={e => this.handleAbilityInput(e, index)}/>
-                                </div>
+                                <Input 
+                                    label={`Player ${value} Ability:`}
+                                    field={`player${value}Ability`}
+                                    type={"range"}
+                                    inputClass={"custom-range"}
+                                    value={playerAbilities[index]}
+                                    handleChange={e => this.handleAbilityInput(e, index)} />
                             }
                         </div>
                     ))}
-                    <button className="btn btn-primary" disabled={!this.state.formValid}>Submit</button>
+                    <Button type={"submit"}
+                            message={"Submit"} 
+                            disabled={!this.state.formValid} />
                     <div className="panel panel-default">
                         <EntryErrors formErrors={this.state.formErrors} />
                     </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import EntryErrors from "../EntryErrors/EntryErrors";
+import Input from "../FormControls/Input";
 
 class Entry extends Component {
     constructor(props) {
@@ -97,19 +98,12 @@ class Entry extends Component {
                 <form onSubmit={this.handleSubmit}>
                     {totalPlayers.map((value, index) => (
                         <div className="container" key={index}>
-                            <div className="form-group">
-                                <label
-                                    htmlFor={`player${value}Name`}>
-                                        {`Player ${value} Name:`}
-                                </label>
-                                <input
+                            <Input label={`Player ${value} Name:`}
+                                    field={`player${value}Name`}
+                                    type={"text"}
                                     value={playerNames[index]}
-                                    type="text"
-                                    className="form-control"
-                                    id={`player${value}Name`}
-                                    onChange={e => this.handleNameInput(e, index)}
-                                    required />
-                            </div>
+                                    handleChange={e => this.handleNameInput(e, index)}        
+                            />
                             {/* Ternary so that the range form elements are only included if abilityPick = true */}
                             {!abilityPick ? null :
                                 <div className="form-group">

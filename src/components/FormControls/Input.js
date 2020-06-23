@@ -1,9 +1,9 @@
 import React from "react";
 
-const Input = ({ field, type, value, handleChange, label }) => (
+const Input = ({ field, type, value, handleChange, label, inputClass }) => (
     <div className="form-group">
     <label htmlFor={field}>{label}</label>
-    <input className="form-control"
+    <input className={inputClass}
            id={field}
            name={field}
            type={type}
@@ -11,5 +11,9 @@ const Input = ({ field, type, value, handleChange, label }) => (
            onChange={handleChange} />
     </div>
 );
+
+Input.defaultProps = {
+    inputClass: "form-control",
+}
 
 export default Input;

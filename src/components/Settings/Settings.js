@@ -94,7 +94,7 @@ class Settings extends Component {
                     type="button"
                     className="btn btn-danger"
                     onClick={this.handleNameButton}>
-                    Click me for cool names!</button>
+                    {!namePicked ? "Click me for cool names!" : "Click again for more names!"}</button>
             {namePicked ? 
             <>
             <h4>Your team names are:</h4>

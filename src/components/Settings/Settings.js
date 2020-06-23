@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import Input from "../FormControls/Input";
+import Select from "../FormControls/Select";
+
 class Settings extends Component {
     constructor(props) {
         super(props);
@@ -112,42 +115,27 @@ class Settings extends Component {
             <form>
                 {!namePicked ?
                 <>
-                <div className="form-group">
-                    <label htmlFor="team1Name">Team 1 Name:</label>
-                    <input value={namePicked ?  this.props.team1Name : team1Name}
-                           type="text"
-                           className="form-control"
-                           id="team1Name"
-                           onChange={this.handleTeam1Name}></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="team2Name">Team 2 Name:</label>
-                    <input value={namePicked ?  this.props.team2Name : team2Name}
-                           type="text"
-                           className="form-control"
-                           id="team2Name"
-                           onChange={this.handleTeam2Name} />
-                </div> 
+                <Input label={"Team 1 Name"}
+                       field={team1Name}
+                       type={"text"}
+                       value={namePicked ?  this.props.team1Name : team1Name}
+                       handleChange={this.handleTeam1Name} 
+                />
+                <Input label={"Team 2 Name"}
+                       field={team2Name}
+                       type={"text"}
+                       value={namePicked ?  this.props.team2Name : team2Name}
+                       handleChange={this.handleTeam2Name} 
+                />
                 </> : null}
                 {!namePicked || nameConfirmed ?
                 <>
-                <div className="form-group">
-                    <label htmlFor="teamSize">Players per team:</label>
-                    <select value={teamSize}
-                            className="form-control"
-                            id="exampleFormControlSelect1"
-                            onChange={this.handleTeamSize}>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </div>
+                <Select field={"teamSize"}
+                        value={teamSize}
+                        label={"Players per team:"}
+                        handleChange={this.handleTeamSize}
+                        options={["3", "4", "5", "6", "7", "8", "9", "10", "11"]}
+                />
                 <div className="form-check">
                     <label>
                         Select teams by ability:

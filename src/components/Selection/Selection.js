@@ -4,7 +4,7 @@ import Reset from "../Reset";
 const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
 
     return (
-        <>
+        <div className="container">
         <h2>Your team selection is:</h2>
             {teams.map((team, index) => (
                 <div key={ index } className="card">
@@ -23,7 +23,7 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
                 </div>
             ))}
         <Reset />
-        </>
+        </div>
     );
 };
 

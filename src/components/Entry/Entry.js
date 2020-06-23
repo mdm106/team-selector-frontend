@@ -92,7 +92,7 @@ class Entry extends Component {
         const { abilityPick } = this.props;
 
         return (
-            <>
+            <div className="container">
                 <h3>Enter player names {abilityPick ? "and abilities" : null} here:</h3>
                 <form onSubmit={this.handleSubmit}>
                     {totalPlayers.map((value, index) => (
@@ -132,7 +132,7 @@ class Entry extends Component {
                         <EntryErrors formErrors={this.state.formErrors} />
                     </div>
                 </form>
-            </>
+            </div>
         );
     }
 }

@@ -89,7 +89,7 @@ class Settings extends Component {
         } = this.state;
 
         return (
-            <>
+            <div className="container">
             <button 
                     type="button"
                     className="btn btn-danger"
@@ -166,7 +166,7 @@ class Settings extends Component {
                 </>
                 : null}
             </form>
-            </>
+            </div>
         );
     }
 }

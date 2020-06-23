@@ -37,7 +37,11 @@ class Entry extends Component {
         let playerNamesComplete = this.state.playerNamesComplete;
         let playerNamesUnique = this.state.playerNamesUnique;
         let numberOfPlayers = this.state.totalPlayers.length;
-        let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index);
+        //find duplicates in array not case sensitive
+        let findDuplicates = arr => {
+            arr = arr.map(name => name.toLowerCase());
+            return arr.filter((name, index) => arr.indexOf(name) != index);
+        }
 
         ///switch statement for validation of playerNames, validation for additional fields can be added as necessary
         // boolean statements to change validation variables in state according to whether complete and unique name data has been added

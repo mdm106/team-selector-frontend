@@ -97,7 +97,7 @@ class Entry extends Component {
                 <h3>Enter player names {abilityPick ? "and abilities" : null} here:</h3>
                 <form onSubmit={this.handleSubmit}>
                     {totalPlayers.map((value, index) => (
-                        <div className="container" key={index}>
+                        <div key={index}>
                             <Input label={`Player ${value} Name:`}
                                     field={`player${value}Name`}
                                     type={"text"}

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import EntryErrors from "../EntryErrors/EntryErrors";
+
 class Entry extends Component {
     constructor(props) {
         super(props);
@@ -13,9 +15,12 @@ class Entry extends Component {
             playerNames: array.map(() => ""),
             playerAbilities: array.map(() => "50"), ///this is the default value for the range, so if the user does not move the range scroller, an ability of 50 will be given
             formErrors: {
-                playerNames: "",
+                incompletePlayerNames: "",
+                duplicatePlayerNames: "",
             },
-            playerNamesValid: false,
+            playerNamesComplete: false,
+            playerNamesUnique: false,
+            formValid: false,
         };
 
         this.handleNameInput = this.handleNameInput.bind(this);
@@ -25,10 +30,41 @@ class Entry extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    
+
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let playerNamesComplete = this.state.playerNamesComplete;
+        let playerNamesUnique = this.state.playerNamesUnique;
+        let numberOfPlayers = this.state.totalPlayers.length;
+        let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index);
+
+        switch(fieldName) {
+            case "playerNames":
+                playerNamesComplete = value.indexOf("") === -1;
+                playerNamesUnique = playerNamesComplete && findDuplicates(value).length === 0;
+                fieldValidationErrors.incompletePlayerNames = playerNamesComplete ? "" : `Please enter ${numberOfPlayers} player names`;
+                fieldValidationErrors.duplicatePlayerNames = !playerNamesUnique && !playerNamesComplete ? "" : !playerNamesUnique && playerNamesComplete === true ? "Duplicate names present, please ensure all names are unique" : "Click submit to find out your teams!";
+                break;
+            default:
+                break;
+        }
+
+        this.setState({formErrors: fieldValidationErrors,
+                        playerNamesComplete: playerNamesComplete,
+                        playerNamesUnique: playerNamesUnique},
+                        this.validateForm);
+    }
+
+    validateForm() {
+        this.setState({formValid: this.state.playerNamesComplete && this.state.playerNamesUnique});
+    }
+
     handleNameInput(e, index) {
         let names = this.state.playerNames.slice();
         names[index] = e.currentTarget.value;
-        this.setState({ playerNames: names });
+        this.setState({ playerNames: names },
+                        () => { this.validateField("playerNames", this.state.playerNames)});
     }
 
     handleAbilityInput(e, index) {
@@ -83,7 +119,10 @@ class Entry extends Component {
                             }
                         </div>
                     ))}
-                    <button className="btn btn-primary">Submit</button>
+                    <button className="btn btn-primary" disabled={!this.state.formValid}>Submit</button>
+                    <div className="panel panel-default">
+                        <EntryErrors formErrors={this.state.formErrors} />
+                    </div>
                 </form>
             </>
         );

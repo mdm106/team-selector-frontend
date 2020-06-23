@@ -40,7 +40,7 @@ class Entry extends Component {
         //find duplicates in array not case sensitive
         let findDuplicates = arr => {
             arr = arr.map(name => name.toLowerCase());
-            return arr.filter((name, index) => arr.indexOf(name) != index);
+            return arr.filter((name, index) => arr.indexOf(name) !== index);
         }
 
         ///switch statement for validation of playerNames, validation for additional fields can be added as necessary
@@ -114,7 +114,7 @@ class Entry extends Component {
                             {!abilityPick ? null :
                                 <div className="form-group">
                                     <label
-                                        for={`player${value}Ability`}>
+                                        htmlFor={`player${value}Ability`}>
                                             {`Player ${value} Ability:`}
                                     </label>
                                     <input

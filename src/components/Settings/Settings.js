@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Input from "../FormControls/Input";
 import Select from "../FormControls/Select";
+import Button from "../Buttons/Button";
 
 class Settings extends Component {
     constructor(props) {
@@ -93,25 +94,20 @@ class Settings extends Component {
 
         return (
             <div className="container">
-            <button 
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={this.handleNameButton}>
-                    {!namePicked ? "Click me for cool names!" : "Click again for more names!"}</button>
+
+            <Button className="btn btn-danger"
+                    onClick={this.handleNameButton}
+                    message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             {namePicked ? 
             <>
             <h4>Your team names are:</h4>
             <h6>{this.props.team1Name} and {this.props.team2Name}</h6>
-            <button 
-                type="button"
-                className="btn btn-primary"
-                onClick={this.handleResetNameButton}>
-                I'll choose my own thanks</button>
-            <button 
-                type="button"
-                className="btn btn-primary"
-                onClick={ this.handleConfirmName }>
-                Happy with these</button> </> : null }
+            
+            <Button onClick={this.handleResetNameButton}
+                    message={"I'll choose my own thanks"} />
+            <Button onClick={this.handleConfirmName}
+                    message={"Happy with these"} />
+             </> : null }
             <form>
                 {!namePicked ?
                 <>
@@ -146,11 +142,9 @@ class Settings extends Component {
                             onChange={this.handleAbilityPick} />
                     </label>
                 </div>
-                <button className="btn btn-primary"
-                        type="submit"
-                        onClick={this.handleSubmit}>
-                        Submit
-                </button>
+                <Button type={"submit"}
+                        onClick={this.handleSubmit}
+                        message={"Submit"} />
                 </>
                 : null}
             </form>

@@ -45,7 +45,7 @@ class Entry extends Component {
 
         return (
             <>
-                <h3>Enter Team Names Here:</h3>
+                <h3>Enter player names {abilityPick ? "and abilities" : null} here:</h3>
                 <form onSubmit={this.handleSubmit}>
                     {totalPlayers.map((value, index) => (
                         <div className="container" key={index}>

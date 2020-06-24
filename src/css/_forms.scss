@@ -2,3 +2,20 @@
     padding: 0px;
 }
 
+/*overriding bootstrap form colours and focus colours*/
+.custom-range::-webkit-slider-thumb  {
+    background: var(--purple);
+}
+
+.custom-range::-moz-range-thumb {
+    background: var(--purple);
+}
+  
+.custom-range::-ms-thumb {
+    background: var(--purple);
+}
+
+.form-control:focus {
+    border-color: var(--purple) !important;
+    box-shadow: 0 0 0 0.2rem rgba(36, 14, 55, 0.25) !important;
+}

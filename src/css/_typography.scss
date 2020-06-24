@@ -54,5 +54,24 @@
     color: var(--purple);
 }
 
+.instructions-para {
+    margin-bottom: 0.5rem;
+}
 
+.name-picker-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.name-picker-para {
+    margin-bottom: 0.2rem;
+    text-align: center;
+    align-self: center;
+}
+
+.instructions-heading {
+    text-align: center;
+}
 

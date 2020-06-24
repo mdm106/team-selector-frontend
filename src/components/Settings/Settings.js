@@ -94,10 +94,13 @@ class Settings extends Component {
 
         return (
             <div className="container">
-
-            <Button className="btn btn-danger"
-                    onClick={this.handleNameButton}
-                    message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
+            <h3 className="instructions-heading">Team Details</h3>
+            <div className="name-picker-text">
+                <p className="name-picker-para">Need inspiration? Use our name picker:</p>
+                <Button className="btn btn-danger"
+                        onClick={this.handleNameButton}
+                        message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
+            </div>
             {namePicked ? 
             <>
             <ul className="team-name-list">
@@ -108,12 +111,13 @@ class Settings extends Component {
                 <li>
                     <h5>{this.props.team2Name}</h5>
                 </li>
-            </ul>                     
-            
-            <Button onClick={this.handleResetNameButton}
-                    message={"I'll choose my own thanks"} />
+            </ul>   
             <Button onClick={this.handleConfirmName}
-                    message={"Happy with these"} />
+                    message={"Use these!"}
+                    className={"btn btn-primary name-picker-first"} />                  
+            <Button onClick={this.handleResetNameButton}
+                    message={"I'll choose my own thanks"}
+                     />
              </> : null }
             <form>
                 {!namePicked ?

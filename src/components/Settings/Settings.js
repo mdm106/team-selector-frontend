@@ -100,13 +100,13 @@ class Settings extends Component {
                     message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             {namePicked ? 
             <>
-            <ul>
+            <ul className="team-name-list">
                 <h4>Your team names are:</h4>
                 <li>
-                    <h6>{this.props.team1Name}</h6>
+                    <h5>{this.props.team1Name}</h5>
                 </li>
                 <li>
-                    <h6>{this.props.team2Name}</h6>
+                    <h5>{this.props.team2Name}</h5>
                 </li>
             </ul>                     
             

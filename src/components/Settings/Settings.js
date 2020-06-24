@@ -111,13 +111,13 @@ class Settings extends Component {
             <form>
                 {!namePicked ?
                 <>
-                <Input label={"Team 1 Name"}
+                <Input label={"Team 1 Name:"}
                        field={team1Name}
                        type={"text"}
                        value={namePicked ?  this.props.team1Name : team1Name}
                        handleChange={this.handleTeam1Name} 
                 />
-                <Input label={"Team 2 Name"}
+                <Input label={"Team 2 Name:"}
                        field={team2Name}
                        type={"text"}
                        value={namePicked ?  this.props.team2Name : team2Name}

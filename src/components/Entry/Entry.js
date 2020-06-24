@@ -110,7 +110,7 @@ class Entry extends Component {
                             {/* Ternary so that the range form elements are only included if abilityPick = true */}
                             {!abilityPick ? null :
                                 <Input 
-                                    label={`Player ${value} Ability:`}
+                                    label={"Ability:"}
                                     field={`player${value}Ability`}
                                     type={"range"}
                                     inputClass={"custom-range"}

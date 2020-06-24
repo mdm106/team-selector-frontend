@@ -19,3 +19,34 @@
     border-color: var(--purple) !important;
     box-shadow: 0 0 0 0.2rem rgba(36, 14, 55, 0.25) !important;
 }
+
+/*name and ability form controls side by side using flex row*/
+.player-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*responsive styling to ensure name and ability form controls are in a column on small devices*/
+@media screen and (max-width: 767px) {
+    .player-form {
+        flex-direction: column;
+    }
+    .player-form .form-group {
+       align-self: center; 
+       width: 100%;
+    }
+}
+
+/*adjusting width according to whether ability range button is present*/
+.no-ability-pick {
+    width: 100%;
+}
+
+.ability-pick {
+    width: 40%;
+}
+
+.custom-range {
+    margin-top: 0.5rem;
+}

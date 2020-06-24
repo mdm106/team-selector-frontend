@@ -50,7 +50,6 @@
 
 /*team selection styling*/
 .card {
-    border-bottom: none;
     border-top: none;
 }
 
@@ -79,6 +78,7 @@
     color: var(--purple);
 }
 
+/*form errors styling*/
 .formErrors p {
     margin-bottom: 0.5rem;
 }

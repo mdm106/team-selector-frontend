@@ -16,17 +16,10 @@ import Settings from "./components/Settings";
 import Entry from "./components/Entry";
 import Selection from "./components/Selection";
 
-let timeHour = new Date().getHours();
-
 const App = () => {
-  let timeHour = new Date().getHours();
-  let timeDay = "day";
-  if(timeHour > 19 || timeHour < 6) {
-    timeDay = "night";
-  }
-  return (
+return (
   <Router history={ history }>
-    <div className={`background_image ${timeDay}` }>
+    <div className={"background_image"}>
       <Header />
       <Switch>
         <Route exact path="/">

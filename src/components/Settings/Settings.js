@@ -94,7 +94,7 @@ class Settings extends Component {
 
         return (
             <div className="container">
-            <h5 className="instructions-para">Enter your team details below:</h5>
+            <h3 className="instructions-heading">Team Details</h3>
             <div className="name-picker-text">
                 <p className="name-picker-para">Need inspiration? Use our name picker:</p>
                 <Button className="btn btn-danger"

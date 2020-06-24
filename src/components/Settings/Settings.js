@@ -111,12 +111,13 @@ class Settings extends Component {
                 <li>
                     <h5>{this.props.team2Name}</h5>
                 </li>
-            </ul>                     
+            </ul>   
+            <Button onClick={this.handleConfirmName}
+                    message={"Use these!"}
+                    className={"btn btn-primary name-picker-first"} />                  
             <Button onClick={this.handleResetNameButton}
                     message={"I'll choose my own thanks"}
-                    className={"btn btn-primary name-picker-first"} />
-            <Button onClick={this.handleConfirmName}
-                    message={"Use these!"} />
+                     />
              </> : null }
             <form>
                 {!namePicked ?

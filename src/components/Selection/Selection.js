@@ -13,7 +13,7 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
                 </ul>
                 {team.map((player, index) => (
                     <li className="list-group-item" key={ index }>
-                        <p>Name: {player.name}</p>
+                        <p>{player.name}</p>
                         {abilityPick ?
                         <p>Ability: {player.ability}/100</p>
                         : null }

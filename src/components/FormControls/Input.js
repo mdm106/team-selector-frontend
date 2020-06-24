@@ -1,7 +1,7 @@
 import React from "react";
 
-const Input = ({ field, type, value, handleChange, label, inputClass }) => (
-    <div className="form-group">
+const Input = ({ field, type, value, handleChange, label, inputClass, groupClass }) => (
+    <div className={groupClass}>
     <label htmlFor={field}>{label}</label>
     <input className={inputClass}
            id={field}
@@ -14,6 +14,7 @@ const Input = ({ field, type, value, handleChange, label, inputClass }) => (
 
 Input.defaultProps = {
     inputClass: "form-control",
+    groupClass: "form-group",
 }
 
 export default Input;

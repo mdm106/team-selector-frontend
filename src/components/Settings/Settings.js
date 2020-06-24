@@ -100,8 +100,15 @@ class Settings extends Component {
                     message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             {namePicked ? 
             <>
-            <h4>Your team names are:</h4>
-            <h6>{this.props.team1Name} and {this.props.team2Name}</h6>
+            <ul>
+                <h4>Your team names are:</h4>
+                <li>
+                    <h6>{this.props.team1Name}</h6>
+                </li>
+                <li>
+                    <h6>{this.props.team2Name}</h6>
+                </li>
+            </ul>                     
             
             <Button onClick={this.handleResetNameButton}
                     message={"I'll choose my own thanks"} />
@@ -111,13 +118,13 @@ class Settings extends Component {
             <form>
                 {!namePicked ?
                 <>
-                <Input label={"Team 1 Name"}
+                <Input label={"Team 1 Name:"}
                        field={team1Name}
                        type={"text"}
                        value={namePicked ?  this.props.team1Name : team1Name}
                        handleChange={this.handleTeam1Name} 
                 />
-                <Input label={"Team 2 Name"}
+                <Input label={"Team 2 Name:"}
                        field={team2Name}
                        type={"text"}
                        value={namePicked ?  this.props.team2Name : team2Name}

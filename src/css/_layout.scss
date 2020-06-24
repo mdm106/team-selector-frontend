@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: white;
+    opacity: 0.95;
+    width: 50%;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 75%;
+    }
+}
+
+.main-title {
+    background-color: rgb(36,14,55);
+    padding: 2rem 0rem;
+    border: 0.8rem rgb(128, 228, 137) solid;
+    margin-bottom: 1.5rem;
+}
+
+.container {
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}

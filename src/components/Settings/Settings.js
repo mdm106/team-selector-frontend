@@ -94,10 +94,13 @@ class Settings extends Component {
 
         return (
             <div className="container">
-
-            <Button className="btn btn-danger"
-                    onClick={this.handleNameButton}
-                    message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
+            <h5 className="instructions-para">Enter your team names, team size below:</h5>
+            <div className="name-picker-text">
+                <p className="name-picker-para">Need inspiration? Use our name picker:</p>
+                <Button className="btn btn-danger"
+                        onClick={this.handleNameButton}
+                        message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
+            </div>
             {namePicked ? 
             <>
             <ul className="team-name-list">

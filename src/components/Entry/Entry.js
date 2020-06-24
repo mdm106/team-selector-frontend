@@ -99,8 +99,9 @@ class Entry extends Component {
                 <form onSubmit={this.handleSubmit}>
                     {totalPlayers.map((value, index) => (
                         <div className="player-form" key={index}>
-                            <Input label={`Player ${value} Name:`}  
-                                    groupClass={"form-group" + abilityPick ? "ability-pick " : "no-ability-pick"}
+                            <Input label={`Player ${value} Name:`} 
+                            /*ternary so that groupClass is dependent on if abilityPick = true*/ 
+                                    groupClass={(abilityPick ? "ability-pick " : "no-ability-pick") + " form-group"}
                                     field={`player${value}Name`}
                                     type={"text"}
                                     value={playerNames[index]}
@@ -113,7 +114,7 @@ class Entry extends Component {
                                     field={`player${value}Ability`}
                                     type={"range"}
                                     inputClass={"custom-range"}
-                                    groupClass={"form-group" + abilityPick ? "ability-pick " : "no-ability-pick"}
+                                    groupClass={(abilityPick ? "ability-pick " : "no-ability-pick") + " form-group"}
                                     value={playerAbilities[index]}
                                     handleChange={e => this.handleAbilityInput(e, index)} />
                             }

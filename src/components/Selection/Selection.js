@@ -13,13 +13,13 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
                 </ul>
                 {team.map((player, index) => (
                     <li className="list-group-item" key={ index }>
-                        <p>Name: {player.name}</p>
+                        <p className="list-group-item-text">{player.name}</p>
                         {abilityPick ?
-                        <p>Ability: {player.ability}/100</p>
+                        <p className="list-group-item-text">Ability: {player.ability}/100</p>
                         : null }
                     </li>
                 ))}
-                {abilityPick ? <p>Average ability: {(team.reduce((total, player) => total + player.ability, 0) / team.length).toFixed(1) }</p> : null }
+                {abilityPick ? <p className="average-info">Average ability: {(team.reduce((total, player) => total + player.ability, 0) / team.length).toFixed(1) }</p> : null }
                 </div>
             ))}
         <Reset />

@@ -31,4 +31,13 @@
     color: var(--green);
 }
 
+.list-group-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
 

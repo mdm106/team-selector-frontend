@@ -2,6 +2,10 @@
     padding: 0px;
 }
 
+.form-check input {
+    margin-left: 0.5rem;
+}
+
 /*overriding bootstrap form colours and focus colours*/
 .custom-range::-webkit-slider-thumb  {
     background: var(--purple);

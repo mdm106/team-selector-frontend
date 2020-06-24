@@ -100,8 +100,15 @@ class Settings extends Component {
                     message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             {namePicked ? 
             <>
-            <h4>Your team names are:</h4>
-            <h6>{this.props.team1Name} and {this.props.team2Name}</h6>
+            <ul>
+                <h4>Your team names are:</h4>
+                <li>
+                    <h6>{this.props.team1Name}</h6>
+                </li>
+                <li>
+                    <h6>{this.props.team2Name}</h6>
+                </li>
+            </ul>                     
             
             <Button onClick={this.handleResetNameButton}
                     message={"I'll choose my own thanks"} />

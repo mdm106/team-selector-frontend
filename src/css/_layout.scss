@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
     background-color: white;
     opacity: 0.95;
@@ -15,4 +19,11 @@
     .container {
         width: 75%;
     }
+}
+
+.main-title {
+    background-color: rgb(36,14,55);
+    padding: 2rem 0rem;
+    border: 0.8rem rgb(128, 228, 137) solid;
+    margin-bottom: 1.5rem;
 }

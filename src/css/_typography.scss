@@ -25,7 +25,8 @@
 }
 
 .card {
-    border: none;
+    border-bottom: none;
+    border-top: none;
 }
 
 .card-title {
@@ -47,8 +48,10 @@
 }
 
 .average-info {
-    padding: 0.3rem;
-    margin: 0 0 0.2rem;
+    padding: 0.4rem;
+    margin: 0;
+    background-color: var(--green);
+    color: var(--purple);
 }
 
 

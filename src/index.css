@@ -12,6 +12,3 @@ code {
     monospace;
 }
 
-@import "./css/_hero.css";
-@import "./css/_layout.css";
-@import "./css/_typography.css";

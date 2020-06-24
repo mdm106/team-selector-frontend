@@ -120,12 +120,12 @@ class Entry extends Component {
                             }
                         </div>
                     ))}
-                    <Button type={"submit"}
-                            message={"Submit"} 
-                            disabled={!this.state.formValid} />
                     <div className="panel panel-default">
                         <EntryErrors formErrors={this.state.formErrors} />
                     </div>
+                    <Button type={"submit"}
+                            message={"Submit"} 
+                            disabled={!this.state.formValid} />
                 </form>
             </div>
         );

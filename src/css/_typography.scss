@@ -1,3 +1,4 @@
+/*title typography styling*/
 .title-text {
     color: white;
     text-align: center;
@@ -13,17 +14,41 @@
     font-size: 2rem;
 }
 
+/*all containers typography styling*/
 .container {
     font-family: var(--openSans);
     font-size: 1.2rem;
 }
 
+/* settings name-picker and instructions styling*/
 .team-name-list {
     list-style-type: none;
     padding: 0px;
     margin-bottom: 0.5rem; 
 }
 
+.instructions-para {
+    margin-bottom: 0.5rem;
+}
+
+.name-picker-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.name-picker-para {
+    margin-bottom: 0.2rem;
+    text-align: center;
+    align-self: center;
+}
+
+.instructions-heading {
+    text-align: center;
+}
+
+/*team selection styling*/
 .card {
     border-bottom: none;
     border-top: none;
@@ -54,24 +79,7 @@
     color: var(--purple);
 }
 
-.instructions-para {
+.formErrors p {
     margin-bottom: 0.5rem;
-}
-
-.name-picker-text {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.name-picker-para {
-    margin-bottom: 0.2rem;
-    text-align: center;
-    align-self: center;
-}
-
-.instructions-heading {
-    text-align: center;
 }
 

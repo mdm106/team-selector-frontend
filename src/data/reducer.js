@@ -40,7 +40,7 @@ let shuffleArray = (array) => {
     return array;
 }
 
-// comparator helper function for sorting array of objects by property
+// comparator helper function for sorting array of objects by ability property in ascending order
 let comparator = (a, b) => {
     let abilityA = a.ability;
     let abilityB = b.ability;
@@ -56,17 +56,23 @@ let comparator = (a, b) => {
 
 // helper function to produce arrays of roughly equal sum
 let equalise = (array) => {
+    //sort players in ascending order by ability
     array.sort(comparator);
+    //set size of groups as half of total number of players in array
     let setSize = array.length/2;
+    //pos variables to keep track of how many players have been assigned to teams
     let pos1 = 0;
     let pos2 = 0;
+    //set i as the highest index in array
     let i = array.length-1;
-
+    //sum variables to keep track of total score for each team
     let sum1 = 0;
     let sum2 = 0; 
-
+    //empty team variables to push the players into when assigning into teams
     let team1 = [];
     let team2 =[];
+    //while neither group has reached the setSize, if sum1 is less than sum2 team1 is assigned the player in i position in the sorted array, where initial i is the player with highest ability
+    //i is increased each time to move down the array of players to assign, and if sum1 is higher than sum2, team2 is assigned the next player 
     while (pos1 < setSize && pos2 < setSize) {
         if (sum1 < sum2) {
            team1[pos1] = array[i];
@@ -80,13 +86,13 @@ let equalise = (array) => {
         }
         i -= 1;
     }
-
+    //if either team is not the correct size, all values that have not been assigned to the other team are filtered from original array and assigned to the team to bring them up to full quota
     if(team1.length < setSize) {
         team1 = array.filter(val => !team2.includes(val));
     } else if (team2.length < setSize) {
         team2 = array.filter(val => !team1.includes(val));
     }
-
+    //both teams made into an array of arrays for use in reducer
     let bothteams = [team1, team2];
 
     return bothteams;

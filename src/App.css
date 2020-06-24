@@ -1,4 +1,6 @@
+@import "./css/_settings.scss";
 @import "./css/_hero.scss";
 @import "./css/_layout.scss";
 @import "./css/_typography.scss";
+@import "./css/_buttons.scss";
 

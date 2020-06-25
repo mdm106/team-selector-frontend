@@ -10,19 +10,28 @@ class Entry extends Component {
 
         //creates array of numbers 1-n according to the teamSize, where n is total number of players
         let array = Array.from(Array(props.teamSize * 2), (_, i) => i + 1);
-
-        // maps over the above array to produce an array of empty objects of length of total number of players
+        //if players already exist in state, local state is set to current state names and abilities
+        let names = array.map(() => "");
+        if(props.players.length !== 0) {
+            names = props.players.map((player) => player.name);
+        }
+        let abilities = array.map(() => "50");
+        if(props.players.length !== 0) {
+            abilities = props.players.map((player) => player.ability);
+        }
+        
         this.state = {
             totalPlayers: array,
-            playerNames: array.map(() => ""),
-            playerAbilities: array.map(() => "50"), ///this is the default value for the range, so if the user does not move the range scroller, an ability of 50 will be given
+            playerNames: names,
+            playerAbilities: abilities, ///this is the default value for the range, so if the user does not move the range scroller, an ability of 50 will be given
             formErrors: {
                 incompletePlayerNames: "",
                 duplicatePlayerNames: "",
             },
             playerNamesComplete: false,
             playerNamesUnique: false,
-            formValid: false,
+            formValid: props.reEntry,
+            reEntry: props.reEntry,
         };
 
         this.handleNameInput = this.handleNameInput.bind(this);
@@ -65,22 +74,24 @@ class Entry extends Component {
                         this.validateForm);
     }
 
-    // sets formValid in state according to whether playerNamesComplete and playerNamesUnique is true, formValid state used to determine whether submit button is enabled
+    // sets formValid in state according to whether playerNamesComplete and playerNamesUnique is true, formValid state used to determine whether submit button is enabled, form is valid when user first returns to reenter data, but if a change is made to the form reentry is set to false and form is validated as normal
     validateForm() {
-        this.setState({formValid: this.state.playerNamesComplete && this.state.playerNamesUnique});
+        this.setState({formValid: (this.state.playerNamesComplete && this.state.playerNamesUnique) || this.state.reEntry });
     }
 
     handleNameInput(e, index) {
         let names = this.state.playerNames.slice();
         names[index] = e.currentTarget.value;
-        this.setState({ playerNames: names },
+        this.setState({ playerNames: names,
+                        reEntry: false },
                         () => { this.validateField("playerNames", this.state.playerNames)});
     }
 
     handleAbilityInput(e, index) {
         let rankings = this.state.playerAbilities.slice();
         rankings[index] = e.currentTarget.value;
-        this.setState({ playerAbilities: rankings });
+        this.setState({ playerAbilities: rankings,
+                        reEntry: false });
     }
 
     handleSubmit(e) {

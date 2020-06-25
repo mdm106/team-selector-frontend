@@ -5,6 +5,7 @@ const initial = {
     abilityPick: false, 
     players: [],
     teams: [],
+    reEntry: false,
 };
 
 export default initial;

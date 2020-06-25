@@ -3,12 +3,12 @@
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: fixed;
     position: fixed;
     overflow-y: scroll;
     object-fit: cover;
     padding: 1rem 0 1rem;
     background-image: url(../images/evening.jpg);
+    background-color: var(--purple);
 }
 
 

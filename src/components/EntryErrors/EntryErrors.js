@@ -2,11 +2,11 @@ import React from "react";
 
 /// component to return the appropriate message relating to the field if formErrors exist
 const EntryErrors = ({ formErrors }) => (
-    <div className='formErrors'>
+    <div className="formErrors">
     {Object.keys(formErrors).map((fieldName, i) => {
       if(formErrors[fieldName].length > 0){
         return (
-          <p key={i}>{formErrors[fieldName]}</p>
+          <p className="alert" key={i}>{formErrors[fieldName]}</p>
         )        
       } else {
         return '';

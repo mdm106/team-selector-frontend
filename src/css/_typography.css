@@ -81,6 +81,11 @@
 /*form errors styling*/
 .formErrors p {
     margin-bottom: 0.5rem;
+    padding: 8px 20px;
+}
+
+.alert {
+    background-color: rgba(128,228,137, 0.5);
 }
 
 /*copied message styling*/

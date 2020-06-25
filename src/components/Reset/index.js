@@ -10,8 +10,8 @@ const mapDispatchToProps = dispatch => {
         handleReset: () => {
             dispatch(reset()); 
             
-            //go to selection results page
-            history.push("/");
+            //go to team details form
+            history.push("/team-details");
         },
     }; 
 };

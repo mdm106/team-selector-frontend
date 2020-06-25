@@ -140,7 +140,7 @@ class Entry extends Component {
                                 message={"Submit"} 
                                 disabled={!this.state.formValid} />
                         <Link to={`/`}>
-                            <p className="btn btn-danger">Back to settings form</p>
+                            <p className="btn btn-danger">Back</p>
                         </Link>
                     </div>
                 </form>

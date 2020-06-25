@@ -14,7 +14,7 @@ const About = () => (
                 <li>Copy feature so that you can easily copy the team details to paste into email, text messages etc</li>      
             </ul>
         <Link to={`/team-details`}>
-            <div className="start-link">
+            <div className="central-button">
                 <p className="btn btn-primary">Get started</p>
             </div>
         </Link>

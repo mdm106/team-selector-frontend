@@ -36,7 +36,7 @@ class Copy extends Component {
     
             {this.state.copied ? 
             <span className="copied-msg">
-                Copied.
+                Copied
             </span> 
             : null}
         </>

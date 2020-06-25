@@ -139,8 +139,9 @@ class Entry extends Component {
                         <Button type={"submit"}
                                 message={"Submit"} 
                                 disabled={!this.state.formValid} />
+
                         <Link to={`/team-details`}>
-                            <p className="btn btn-danger">Back</p>
+                           <p className="btn btn-danger">Back</p>
                         </Link>
                     </div>
                 </form>

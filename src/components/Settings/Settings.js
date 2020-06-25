@@ -168,15 +168,18 @@ class Settings extends Component {
                             onChange={this.handleAbilityPick} />
                     </label>
                 </div>
-                <Button type={"submit"}
-                        onClick={this.handleSubmit}
-                        message={"Submit"} />
+                <div className="adjacent-buttons">
+                    <Button type={"submit"}
+                            onClick={this.handleSubmit}
+                            message={"Submit"} />
+                    <Button className={"danger"}
+                        message={"Reset form"}
+                        onClick={this.handleResetForm} />
+                </div>
                 </>
                 : null}
             </form>
-            <Button className={"danger"}
-                    message={"Reset form"}
-                    onClick={this.handleResetForm} />
+            
             </div>
         );
     }

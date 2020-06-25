@@ -66,7 +66,7 @@ class Entry extends Component {
 
                 fieldValidationErrors.incompletePlayerNames = playerNamesComplete ? "" : `Please enter ${numberOfPlayers} player names`;
 
-                fieldValidationErrors.duplicatePlayerNames = !playerNamesUnique && !playerNamesComplete ? "" : !playerNamesUnique && playerNamesComplete ? "Duplicate names present, please ensure all names are unique" : "Entries complete, click submit to find out your teams!";
+                fieldValidationErrors.duplicatePlayerNames = !playerNamesUnique && !playerNamesComplete ? "" : !playerNamesUnique && playerNamesComplete ? "Duplicate names present, please ensure all names are unique" : "Click submit to find out your teams!";
 
                 break;
             default:

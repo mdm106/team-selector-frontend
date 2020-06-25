@@ -26,12 +26,12 @@ class Copy extends Component {
     
     render() {
         return (
-        <div className="container">    
+        <>    
             <CopyToClipboard 
                 text={this.state.value}
                 onCopy={this.handleCopy}>
                     <button className="btn btn-primary">
-                        Copy team details to share in email / WhatsApp etc!
+                        Copy team details to share in email / WhatsApp etc
                     </button>
             </CopyToClipboard>
     
@@ -40,7 +40,7 @@ class Copy extends Component {
                 Copied.
             </span> 
             : null}
-        </div>
+        </>
         );
   }
 }

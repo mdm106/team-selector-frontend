@@ -1,7 +1,8 @@
 import React from "react";
 import Reset from "../Reset";
+import Button from "../Buttons/Button";
 
-const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
+const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) => {
 
     return (
         <div className="container">
@@ -23,6 +24,8 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick }) => {
                 </div>
             ))}
         <Reset />
+        <Button message={"Amend player details"}
+                onClick={ handleAmend } />
         </div>
     );
 };

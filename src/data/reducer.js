@@ -39,12 +39,20 @@ const saveNamesReducer = (state, {team1Name, team2Name }) => {
     }
 }
 
+const setAmendReducer = (state) => {
+    return {
+        ...state,
+        reEntry: true,
+    }
+}
+
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "SAVE_SETTINGS": return saveSettingsReducer(state, action);
         case "SAVE_PLAYERS": return savePlayersReducer(state, action);
         case "SAVE_NAMES": return saveNamesReducer(state, action);
+        case "AMEND_ENTRIES": return setAmendReducer(state);
         case "RESET": return resetReducer(state);
         default: return state;
     }

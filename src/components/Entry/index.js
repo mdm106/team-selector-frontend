@@ -4,10 +4,12 @@ import Entry from "./Entry";
 import { updateEntries } from "../../data/actions/state";
 import history from "../../history";
 
-const mapStateToProps = ({ teamSize, abilityPick }) => {
+const mapStateToProps = ({ teamSize, abilityPick, players, reEntry }) => {
     return {
         teamSize,
-        abilityPick
+        abilityPick,
+        players,
+        reEntry
     };
 };
 

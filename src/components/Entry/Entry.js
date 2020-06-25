@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import EntryErrors from "../EntryErrors/EntryErrors";
 import Input from "../FormControls/Input";
@@ -134,10 +135,16 @@ class Entry extends Component {
                     <div className="panel panel-default">
                         <EntryErrors formErrors={this.state.formErrors} />
                     </div>
-                    <Button type={"submit"}
-                            message={"Submit"} 
-                            disabled={!this.state.formValid} />
+                    <div className="adjacent-buttons">
+                        <Button type={"submit"}
+                                message={"Submit"} 
+                                disabled={!this.state.formValid} />
+                        <Link to={`/`}>
+                            <p className="btn btn-danger">Back to settings form</p>
+                        </Link>
+                    </div>
                 </form>
+                
             </div>
         );
     }

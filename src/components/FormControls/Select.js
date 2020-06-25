@@ -9,7 +9,7 @@ const Select = ({ field, value, handleChange, label, options }) => (
            value={ value }
            onChange={handleChange}>
     {options.map((option, index) => (
-        <option value={option}>{option}</option>
+        <option key={index} value={option}>{option}</option>
     ))}
     </select>
     </div>

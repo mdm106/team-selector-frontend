@@ -11,7 +11,7 @@ const Button = ({ type, className, onClick, message, disabled }) => (
 
 Button.defaultProps = {
     type: "button",
-    className: "btn btn-primary",
+    className: "primary",
     disabled: false,
 }
 

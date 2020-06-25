@@ -23,9 +23,11 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) =>
                 {abilityPick ? <p className="average-info">Average ability: {(team.reduce((total, player) => total + player.ability, 0) / team.length).toFixed(1) }</p> : null }
                 </div>
             ))}
-        <Reset />
-        <Button message={"Amend player details"}
-                onClick={ handleAmend } />
+        <div className="adjacent-buttons">
+            <Button message={"Amend player details"}
+                    onClick={ handleAmend } />
+            <Reset /> 
+        </div>
         </div>
     );
 };

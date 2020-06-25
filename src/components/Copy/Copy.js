@@ -30,7 +30,7 @@ class Copy extends Component {
                 text={this.state.value}
                 onCopy={this.handleCopy}>
                     <button className="btn btn-primary">
-                        Copy team details to share in email / WhatsApp etc
+                        Copy team details to clipboard
                     </button>
             </CopyToClipboard>
     

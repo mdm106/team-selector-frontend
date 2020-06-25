@@ -1,6 +1,7 @@
 import React from "react";
 import Reset from "../Reset";
 import Button from "../Buttons/Button";
+import Copy from "../Copy/Copy";
 
 const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) => {
 
@@ -28,6 +29,7 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) =>
                     onClick={ handleAmend } />
             <Reset /> 
         </div>
+        <Copy />
         </div>
     );
 };

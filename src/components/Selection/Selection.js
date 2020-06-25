@@ -1,7 +1,7 @@
 import React from "react";
 import Reset from "../Reset";
 import Button from "../Buttons/Button";
-import Copy from "../Copy/Copy";
+import Copy from "../Copy";
 
 const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) => {
 

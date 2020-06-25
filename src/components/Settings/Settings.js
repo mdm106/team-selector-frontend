@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import Input from "../FormControls/Input";
 import Select from "../FormControls/Select";
@@ -171,10 +172,13 @@ class Settings extends Component {
                     <Button type={"submit"}
                             onClick={this.handleSubmit}
                             message={"Submit"} />
-                    <div>
+                    <div className="adjacent-buttons">
                         <Button className={"danger"}
                                 message={"Reset form"}
                                 onClick={this.handleResetForm} />
+                        <Link to={`/`}>
+                           <p className="btn btn-danger">Back to about page</p>
+                        </Link>
                     </div>
                 </>
                 : null}

@@ -6,9 +6,14 @@ class Copy extends Component {
         super(props);
 
         let makeText = (team1Name, team2Name, teams) => {
-            let team1 = teams[0].reduce((string, player) => string + player.name + "\n", "\n");
-            let team2 = teams[1].reduce((string, player) => string + player.name + "\n", "\n");
-            return "Team: " + team1Name + team1 + "\nTeam: " + team2Name + team2;
+            if(teams.length > 0 ) {
+                let team1 = teams[0].reduce((string, player) => string + player.name + "\n", "\n");
+                let team2 = teams[1].reduce((string, player) => string + player.name + "\n", "\n");
+                return "Team: " + team1Name + team1 + "\nTeam: " + team2Name + team2;
+            }
+            else {
+                return "";
+            }
         }
 
         this.state = {

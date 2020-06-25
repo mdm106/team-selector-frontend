@@ -111,10 +111,10 @@ class Settings extends Component {
             {!nameConfirmed ? 
             <div className="name-picker-text">
                 <p className="name-picker-para">Need inspiration? Use our name picker:</p>
-                <Button className={"danger"}
-                        onClick={this.handleNameButton}
+                <Button onClick={this.handleNameButton}
                         message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             </div> : null }
+            
             {namePicked && !nameConfirmed ? 
             <>
             <Button onClick={this.handleConfirmName}

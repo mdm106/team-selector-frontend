@@ -136,3 +136,9 @@ export const amendEntries = () => {
         type: "AMEND_ENTRIES",
     }
 }
+
+export const resetSettings = () => {
+    return {
+        type: "RESET",
+    }
+}

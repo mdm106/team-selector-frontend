@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import Settings from "./Settings";
-import { saveSettings } from "../../data/actions/state";
+import { saveSettings, resetSettings } from "../../data/actions/state";
 import { getTeamNames } from "../../data/actions/api";
 import history from "../../history";
 
@@ -24,6 +24,7 @@ const mapDispatchToProps = dispatch => {
             history.push("/name-entry");
         },
         handleTeamName: () => dispatch(getTeamNames()),
+        handleFormReset: () => dispatch(resetSettings())
     };
 };
 

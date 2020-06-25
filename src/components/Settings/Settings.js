@@ -28,6 +28,7 @@ class Settings extends Component {
         this.handleNameButton = this.handleNameButton.bind(this);
         this.handleResetNameButton = this.handleResetNameButton.bind(this);
         this.handleConfirmName = this.handleConfirmName.bind(this);
+        this.handleResetForm = this.handleResetForm.bind(this);
     }
 
     handleTeam1Name(e) {
@@ -82,6 +83,18 @@ class Settings extends Component {
         })
     }
 
+    handleResetForm() {
+        this.props.handleFormReset();
+        this.setState({
+            abilityPick: false,
+            team1Name: "Team 1",
+            team2Name: "Team 2",
+            teamSize: 5,
+            namePicked: false,
+            nameConfirmed: false
+        });
+    }
+
     render() {
         let {
             team1Name,
@@ -98,14 +111,14 @@ class Settings extends Component {
             {!nameConfirmed ? 
             <div className="name-picker-text">
                 <p className="name-picker-para">Need inspiration? Use our name picker:</p>
-                <Button className="btn btn-danger"
-                        onClick={this.handleNameButton}
+                <Button onClick={this.handleNameButton}
                         message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             </div> : null }
+            
             {namePicked && !nameConfirmed ? 
             <>
             <Button onClick={this.handleConfirmName}
-                    message={"Use these!"}
+                    message={"Use the team names below!"}
                     className={"btn btn-primary name-picker-first"} />                  
             <Button onClick={this.handleResetNameButton}
                     message={"I'll choose my own thanks"}
@@ -155,12 +168,18 @@ class Settings extends Component {
                             onChange={this.handleAbilityPick} />
                     </label>
                 </div>
-                <Button type={"submit"}
-                        onClick={this.handleSubmit}
-                        message={"Submit"} />
+                <div className="adjacent-buttons">
+                    <Button type={"submit"}
+                            onClick={this.handleSubmit}
+                            message={"Submit"} />
+                    <Button className={"danger"}
+                        message={"Reset form"}
+                        onClick={this.handleResetForm} />
+                </div>
                 </>
                 : null}
             </form>
+            
             </div>
         );
     }

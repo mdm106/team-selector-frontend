@@ -27,24 +27,10 @@ let randomTeams = (array) => {
     return [team1, team2];
 }
 
-// for sorting array of objects by ability property in ascending order
-let abilityComparator = (a, b) => {
-    let abilityA = a.ability;
-    let abilityB = b.ability;
-
-    let comparison = 0;
-    if (abilityA > abilityB) {
-        comparison = 1;
-    } else if (abilityA < abilityB) {
-        comparison = -1;
-    }
-    return comparison;
-}
-
 // to produce arrays of roughly equal sum
 let equalTeams = (array) => {
     //sort players in ascending order by ability
-    array.sort(abilityComparator);
+    array.sort((a,b) => a.ability - b.ability);
     //set size of teams as half of total number of players in array
     let setSize = array.length/2;
    
@@ -82,19 +68,6 @@ let equalTeams = (array) => {
     return [team1, team2]
 }
 
-let idComparator = (a, b) => {
-    let idA = a.id;
-    let idB = b.id;
-
-    let comparison = 0;
-    if (idA > idB) {
-        comparison = 1;
-    } else if (idA < idB) {
-        comparison = -1;
-    }
-    return comparison;
-}
-
 /*Action creators*/
 
 export const saveSettings = ({ team1Name, team2Name, teamSize, abilityPick }) => {
@@ -113,7 +86,7 @@ export const updateEntries = ({ playerNames, playerAbilities, totalPlayers }) =>
         type: "SAVE_PLAYERS",
         randomisedTeams: randomTeams(players),
         equalisedTeams: equalTeams(players),
-        players: players.sort(idComparator),
+        players: players.sort((a,b) => a.id - b.id),
     };
 }
 

@@ -16,6 +16,7 @@ import About from "./components/About";
 import Settings from "./components/Settings";
 import Entry from "./components/Entry";
 import Selection from "./components/Selection";
+import FourOhFour from "./components/FourOhFour";
 
 const App = () => {
 return (
@@ -35,6 +36,7 @@ return (
         <Route exact path="/team-selection">
           <Selection />
         </Route>
+          <FourOhFour />
       </Switch>
       
     </div>

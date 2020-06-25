@@ -121,7 +121,7 @@ class Settings extends Component {
                     message={"Use the team names below!"}
                     className={"btn btn-primary name-picker-first"} />                  
             <Button onClick={this.handleResetNameButton}
-                    message={"I'll choose my own thanks."}
+                    message={"I'll choose my own thanks"}
                      />
              </> : null }
              {namePicked ? 

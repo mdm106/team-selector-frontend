@@ -88,3 +88,17 @@
     margin-left: 1rem;
     color: red;
 }
+
+.about-list {
+    list-style: none;
+}
+
+.about-list li::before {
+    content: "\2022";
+    color: var(--green);
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}

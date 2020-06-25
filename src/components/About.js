@@ -4,7 +4,7 @@ const About = () => (
     <div className="container">
         <h5>Team Selector helps you quickly and fairly pick your teams. Less time organising, more time winning.</h5>
         <br/>
-            <ul>
+            <ul className="about-list">
             <h5>Features include:</h5>
                 <li>Team name generator to randomly assign your teams with fun names</li>
                 <li>Selection for team sizes ranging from 5-a-side up to 11-a-side</li>
@@ -12,7 +12,6 @@ const About = () => (
                 <li>Option to provide player ability scores for balanced team selection</li>
                 <li>Copy feature so that you can easily paste the team details into email, text messages etc</li>      
             </ul>
-        
     </div>
 );
 

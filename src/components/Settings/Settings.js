@@ -28,6 +28,7 @@ class Settings extends Component {
         this.handleNameButton = this.handleNameButton.bind(this);
         this.handleResetNameButton = this.handleResetNameButton.bind(this);
         this.handleConfirmName = this.handleConfirmName.bind(this);
+        this.handleResetForm = this.handleResetForm.bind(this);
     }
 
     handleTeam1Name(e) {
@@ -82,6 +83,18 @@ class Settings extends Component {
         })
     }
 
+    handleResetForm() {
+        this.props.handleFormReset();
+        this.setState({
+            abilityPick: false,
+            team1Name: "Team 1",
+            team2Name: "Team 2",
+            teamSize: 5,
+            namePicked: false,
+            nameConfirmed: false
+        });
+    }
+
     render() {
         let {
             team1Name,
@@ -98,7 +111,7 @@ class Settings extends Component {
             {!nameConfirmed ? 
             <div className="name-picker-text">
                 <p className="name-picker-para">Need inspiration? Use our name picker:</p>
-                <Button className="btn btn-danger"
+                <Button className={"danger"}
                         onClick={this.handleNameButton}
                         message={!namePicked ? "Click me for cool names!" : "Click again for more names!"} />
             </div> : null }
@@ -161,6 +174,9 @@ class Settings extends Component {
                 </>
                 : null}
             </form>
+            <Button className={"danger"}
+                    message={"Reset form"}
+                    onClick={this.handleResetForm} />
             </div>
         );
     }

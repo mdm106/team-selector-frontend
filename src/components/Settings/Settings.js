@@ -118,10 +118,10 @@ class Settings extends Component {
             {namePicked && !nameConfirmed ? 
             <>
             <Button onClick={this.handleConfirmName}
-                    message={"Use these!"}
+                    message={"Use the team names below!"}
                     className={"btn btn-primary name-picker-first"} />                  
             <Button onClick={this.handleResetNameButton}
-                    message={"I'll choose my own thanks"}
+                    message={"I'll choose my own thanks."}
                      />
              </> : null }
              {namePicked ? 

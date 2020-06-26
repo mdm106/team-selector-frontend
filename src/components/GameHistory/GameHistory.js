@@ -23,7 +23,7 @@ const GameHistory = (
                             <th scope="col">Game Date</th>
                             <th scope="col">Team Names</th>
                             <th scope="col">Score</th>
-                            <th scope="col">Update details</th>
+                            <th scope="col"> </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,18 +32,13 @@ const GameHistory = (
                                 <td>{game.game_date}</td>
                                     <td>{`${game.team_1} | ${game.team_2}`}</td>
                                 {game.game_complete===0 ?
-                                    <> 
-                                        <td>--</td>
-                                        <td>
-                                            <Link to={`/game-details/${game.id}`}>
-                                                Update
-                                            </Link>
-                                        </td>
-                                    </> : 
-                                    <>
-                                        <td>{ `${game.team_1_score} - ${game.team_2_score}` }</td>
-                                        <td>--</td>
-                                    </> }
+                                    <td>--</td> : 
+                                    <td>{ `${game.team_1_score} - ${game.team_2_score}` }</td> }
+                                <td>
+                                    <Link to={`/game-details/${game.id}`}>
+                                        Update
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

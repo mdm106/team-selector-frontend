@@ -115,3 +115,10 @@ export const resetSettings = () => {
         type: "RESET",
     }
 }
+
+export const saveGames = (data) => {
+    return {
+        type: "SAVE_GAMES",
+        games: data,
+    };
+};

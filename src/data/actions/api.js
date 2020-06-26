@@ -1,12 +1,20 @@
 import axios from "../../axios";
 import history from "../../history";
 
-import { saveTeamNames } from "./state";
+import { saveTeamNames, saveGames } from "./state";
 
 export const getTeamNames = () => {
     return (dispatch) => {
-        return axios.get(`/team-names/random`).then(({ data }) => {
+        return axios.get("/team-names/random").then(({ data }) => {
             dispatch(saveTeamNames(data.data));
+        })
+    }
+}
+
+export const getGames = () => {
+    return (dispatch) => {
+        return axios.get("/games").then(({ data }) => {
+            dispatch(saveGames(data.data));
         })
     }
 }

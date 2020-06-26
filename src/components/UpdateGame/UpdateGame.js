@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import Input from "../FormControls/Input";
 import Checkbox from "../FormControls/Checkbox";
@@ -142,6 +143,9 @@ class UpdateGame extends Component {
                     <Button type={"submit"}
                             message={"Submit"} />
                 </form>
+                <Link to={`/`}>
+                    <p className="btn btn-primary">Back to Home</p>
+                </Link>
                 </Loading>
             </div>
         );

@@ -145,7 +145,7 @@ class Entry extends Component {
                     </div>
                     <div>
                         <Link to={`/team-details`}>
-                           <p className="btn btn-danger name-picker-first">Back to settings form</p>
+                           <p className="btn btn-danger gapped-buttons">Back to settings form</p>
                         </Link>
                         <Link to={`/`}>
                             <p className="btn btn-danger">Home</p>

@@ -13,11 +13,16 @@ const About = () => (
                 <li>Option to provide player ability scores for balanced team selection</li>
                 <li>Copy feature so that you can easily copy the team details to paste into email, text messages etc</li>      
             </ul>
-        <Link to={`/team-details`}>
             <div className="central-button">
-                <p className="btn btn-primary">Get started</p>
+                <Link to={`/team-details`}>
+                        <p className="btn btn-primary">Get selecting!</p>
+                </Link>
             </div>
-        </Link>
+            <div className="central-button">
+                <Link to={`/game-history`}>
+                        <p className="btn btn-danger">View previous game details</p>
+                </Link>
+            </div>
     </div>
 );
 

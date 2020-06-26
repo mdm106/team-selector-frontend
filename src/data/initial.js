@@ -6,6 +6,7 @@ const initial = {
     players: [],
     teams: [],
     reEntry: false,
+    games: [],
 };
 
 export default initial;

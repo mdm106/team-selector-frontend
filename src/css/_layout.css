@@ -21,6 +21,16 @@
     }
 }
 
+.history-table {
+    width: 75%;
+}
+
+@media screen and (max-width: 991px){
+    .history-table {
+        width: 95%;
+    }
+}
+
 .main-title {
     background-color: rgb(36,14,55);
     padding: 2rem 0rem;

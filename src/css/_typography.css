@@ -20,6 +20,18 @@
     font-size: 1.2rem;
 }
 
+@media screen and (max-width: 767px) {
+    .history-table {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .history-table {
+        font-size: 0.9rem;
+    }
+}
+
 /* settings name-picker and instructions styling*/
 .team-name-list {
     list-style-type: none;

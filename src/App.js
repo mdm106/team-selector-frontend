@@ -16,6 +16,8 @@ import About from "./components/About";
 import Settings from "./components/Settings";
 import Entry from "./components/Entry";
 import Selection from "./components/Selection";
+import GameForm from "./components/GameForm";
+import GameRegistered from "./components/GameRegistered";
 import FourOhFour from "./components/FourOhFour";
 
 const App = () => {
@@ -35,6 +37,12 @@ return (
         </Route>
         <Route exact path="/team-selection">
           <Selection />
+        </Route>
+        <Route exact path="/game-details">
+          <GameForm />
+        </Route>
+        <Route exact path="/game-saved">
+          <GameRegistered />
         </Route>
           <FourOhFour />
       </Switch>

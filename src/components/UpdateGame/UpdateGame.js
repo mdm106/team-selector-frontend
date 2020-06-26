@@ -44,7 +44,7 @@ class UpdateGame extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.game !== prevProps.game) {
+        if (this.props.game !== prevProps.game && this.props.game) {
             this.setState({
                 gameDate: this.props.game.game_date,
                 team1Name: this.props.game.team_1,

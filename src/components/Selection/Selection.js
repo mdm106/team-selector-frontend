@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Reset from "../Reset";
 import Button from "../Buttons/Button";
 import Copy from "../Copy";
@@ -29,7 +31,12 @@ const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) =>
                     onClick={ handleAmend } />
             <Reset /> 
         </div>
-        <Copy />
+        <div className="adjacent-buttons">
+            <Copy />
+            <Link to={`/game-details`}>
+                <p className="btn btn-primary">Save game details</p>
+            </Link>
+        </div>
         </div>
     );
 };

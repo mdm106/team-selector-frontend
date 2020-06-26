@@ -138,13 +138,17 @@ class Entry extends Component {
                     <div className="panel panel-default">
                         <EntryErrors formErrors={this.state.formErrors} />
                     </div>
-                    <div className="adjacent-buttons">
+                    <div>
                         <Button type={"submit"}
                                 message={"Submit"} 
                                 disabled={!this.state.formValid} />
-
+                    </div>
+                    <div>
                         <Link to={`/team-details`}>
-                           <p className="btn btn-danger">Back</p>
+                           <p className="btn btn-danger gapped-buttons">Back to settings form</p>
+                        </Link>
+                        <Link to={`/`}>
+                            <p className="btn btn-danger">Home</p>
                         </Link>
                     </div>
                 </form>

@@ -17,3 +17,7 @@
     width: 100%;
     background-color: var(--green);
 }
+
+.loading-message p {
+    margin: 0.5rem 0;
+}

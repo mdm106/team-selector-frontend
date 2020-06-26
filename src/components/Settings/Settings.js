@@ -123,7 +123,7 @@ class Settings extends Component {
             <>
             <Button onClick={this.handleConfirmName}
                     message={"Use the team names below!"}
-                    className={"btn btn-primary name-picker-first"} />                  
+                    className={"btn btn-primary gapped-buttons"} />                  
             <Button onClick={this.handleResetNameButton}
                     message={"I'll choose my own thanks"}
                      />
@@ -172,7 +172,7 @@ class Settings extends Component {
                             message={"Reset form"}
                             onClick={this.handleResetForm} />
                     <Link to={`/`}>
-                        <p className="btn btn-danger">Back to about page</p>
+                        <p className="btn btn-danger">Back to home</p>
                     </Link>
                 </div>
                 </>

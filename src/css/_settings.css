@@ -11,3 +11,9 @@
     --bebas: 'Bebas Neue', cursive;
     --openSans: 'Open Sans Condensed', sans-serif;
 }
+
+/* Loading bar styling */
+.progress div {
+    width: 100%;
+    background-color: var(--green);
+}

@@ -23,7 +23,7 @@ const GameHistory = (
                             <th scope="col">Game Date</th>
                             <th scope="col">Team Names</th>
                             <th scope="col">Score</th>
-                            <th scope="col"> </th>
+                            <th scope="col">Click link update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +43,11 @@ const GameHistory = (
                         ))}
                     </tbody>
                 </table>
+                <Link to={`/`}>
+                    <div className="central-button">
+                        <p className="btn btn-danger central-button">Back to home</p>
+                    </div>
+                </Link>
             </Loading>
         </div>
     )

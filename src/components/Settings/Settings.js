@@ -20,16 +20,43 @@ class Settings extends Component {
             nameConfirmed: false,         
         };
 
+        this.handleNameButton = this.handleNameButton.bind(this);
+        this.handleConfirmName = this.handleConfirmName.bind(this);
+        this.handleResetNameButton = this.handleResetNameButton.bind(this);
+
         this.handleTeam1Name = this.handleTeam1Name.bind(this);
         this.handleTeam2Name = this.handleTeam2Name.bind(this);
         this.handleTeamSize = this.handleTeamSize.bind(this);
         this.handleAbilityPick = this.handleAbilityPick.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleNameButton = this.handleNameButton.bind(this);
-        this.handleResetNameButton = this.handleResetNameButton.bind(this);
-        this.handleConfirmName = this.handleConfirmName.bind(this);
+              
         this.handleResetForm = this.handleResetForm.bind(this);
+    }
+
+    handleNameButton() {
+        this.props.handleTeamName();
+        this.setState((state, props) => ({
+            namePicked: true,
+            team1Name: props.team1Name,
+            team2Name: props.team2Name,
+        }));
+    }
+
+    handleConfirmName() {
+        this.setState({
+            team1Name: this.props.team1Name,
+            team2Name: this.props.team2Name,
+            nameConfirmed: true,
+        })
+    }
+
+    handleResetNameButton() {
+        this.setState({
+            namePicked: false,
+            team1Name: "Team 1",
+            team2Name: "Team 2",
+        })
     }
 
     handleTeam1Name(e) {
@@ -58,32 +85,7 @@ class Settings extends Component {
         e.preventDefault();
         this.props.handleSave({ ...this.state });
     }
-
-    handleNameButton() {
-        this.props.handleTeamName();
-        this.setState((state, props) => ({
-            namePicked: true,
-            team1Name: props.team1Name,
-            team2Name: props.team2Name,
-        }));
-    }
-
-    handleResetNameButton() {
-        this.setState({
-            namePicked: false,
-            team1Name: "Team 1",
-            team2Name: "Team 2",
-        })
-    }
-
-    handleConfirmName() {
-        this.setState({
-            team1Name: this.props.team1Name,
-            team2Name: this.props.team2Name,
-            nameConfirmed: true,
-        })
-    }
-
+     
     handleResetForm() {
         this.props.handleFormReset();
         this.setState({
@@ -140,13 +142,11 @@ class Settings extends Component {
                 <>
                 <Input label={"Team 1 Name:"}
                        field={team1Name}
-                       type={"text"}
                        value={namePicked ?  this.props.team1Name : team1Name}
                        handleChange={this.handleTeam1Name} 
                 />
                 <Input label={"Team 2 Name:"}
                        field={team2Name}
-                       type={"text"}
                        value={namePicked ?  this.props.team2Name : team2Name}
                        handleChange={this.handleTeam2Name} 
                 />

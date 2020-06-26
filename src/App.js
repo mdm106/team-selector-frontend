@@ -18,6 +18,7 @@ import Entry from "./components/Entry";
 import Selection from "./components/Selection";
 import GameForm from "./components/GameForm";
 import GameRegistered from "./components/GameRegistered";
+import GameHistory from "./components/GameHistory";
 import FourOhFour from "./components/FourOhFour";
 
 const App = () => {
@@ -43,6 +44,9 @@ return (
         </Route>
         <Route exact path="/game-saved">
           <GameRegistered />
+        </Route>
+        <Route exact path="/game-history">
+          <GameHistory />
         </Route>
           <FourOhFour />
       </Switch>

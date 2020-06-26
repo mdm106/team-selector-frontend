@@ -21,6 +21,7 @@ class GameForm extends Component {
         this.handleTeam1Name = this.handleTeam1Name.bind(this);
         this.handleTeam2Name = this.handleTeam2Name.bind(this);
         this.handleTeam1Score = this.handleTeam1Score.bind(this);
+        this.handleTeam2Score = this.handleTeam2Score.bind(this);
         this.handleGameComplete = this.handleGameComplete.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -99,7 +100,7 @@ class GameForm extends Component {
                            value={team2Score}
                            handleChange={this.handleTeam2Score} />
                     <Checkbox label={"Game completed?:"}
-                          field={"gameCompleted"}
+                          field={"gameComplete"}
                           checked={gameComplete}
                           handleChange={this.handleGameComplete} />
                     <Button type={"submit"}

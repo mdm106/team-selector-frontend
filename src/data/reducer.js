@@ -50,7 +50,7 @@ const saveGamesReducer = (state, { games }) => {
     return {
         ...state,
         games,
-        loaded: true,
+        gamesLoaded: true,
     }
 }
 

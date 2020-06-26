@@ -46,6 +46,14 @@ const setAmendReducer = (state) => {
     }
 }
 
+const saveGamesReducer = (state, { games }) => {
+    return {
+        ...state,
+        games,
+        gamesLoaded: true,
+    }
+}
+
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -53,6 +61,7 @@ const reducer = (state, action) => {
         case "SAVE_PLAYERS": return savePlayersReducer(state, action);
         case "SAVE_NAMES": return saveNamesReducer(state, action);
         case "AMEND_ENTRIES": return setAmendReducer(state);
+        case "SAVE_GAMES": return saveGamesReducer(state, action);
         case "RESET": return resetReducer(state);
         default: return state;
     }

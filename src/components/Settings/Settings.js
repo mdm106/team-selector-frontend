@@ -172,7 +172,7 @@ class Settings extends Component {
                             message={"Reset form"}
                             onClick={this.handleResetForm} />
                     <Link to={`/`}>
-                        <p className="btn btn-danger">Back to about page</p>
+                        <p className="btn btn-danger">Back to home</p>
                     </Link>
                 </div>
                 </>

@@ -19,6 +19,7 @@ import Selection from "./components/Selection";
 import GameForm from "./components/GameForm";
 import GameRegistered from "./components/GameRegistered";
 import GameHistory from "./components/GameHistory";
+import UpdateGame from "./components/UpdateGame";
 import FourOhFour from "./components/FourOhFour";
 
 const App = () => {
@@ -48,6 +49,9 @@ return (
         <Route exact path="/game-history">
           <GameHistory />
         </Route>
+        <Route path="/game-details/:id" render={({ match }) => (
+          <UpdateGame gameId={match.params.id} />
+        )} />
           <FourOhFour />
       </Switch>
       

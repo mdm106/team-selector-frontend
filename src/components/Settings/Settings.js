@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Input from "../FormControls/Input";
 import Select from "../FormControls/Select";
+import Checkbox from "../FormControls/Checkbox";
 import Button from "../Buttons/Button";
 
 class Settings extends Component {
@@ -159,27 +160,21 @@ class Settings extends Component {
                         handleChange={this.handleTeamSize}
                         options={["3", "4", "5", "6", "7", "8", "9", "10", "11"]}
                 />
-                <div className="form-check">
-                    <label>
-                        Select teams by ability:
-                        <input
-                            name="abilityPick"
-                            type="checkbox"
-                            checked={abilityPick}
-                            onChange={this.handleAbilityPick} />
-                    </label>
-                </div>
-                    <Button type={"submit"}
+                <Checkbox label={"Select teams by ability:"}
+                          field={"abilityPick"}
+                          checked={abilityPick}
+                          handleChange={this.handleAbilityPick} />
+                <Button type={"submit"}
                             onClick={this.handleSubmit}
                             message={"Submit"} />
-                    <div className="adjacent-buttons">
-                        <Button className={"danger"}
-                                message={"Reset form"}
-                                onClick={this.handleResetForm} />
-                        <Link to={`/`}>
-                           <p className="btn btn-danger">Back to about page</p>
-                        </Link>
-                    </div>
+                <div className="adjacent-buttons">
+                    <Button className={"danger"}
+                            message={"Reset form"}
+                            onClick={this.handleResetForm} />
+                    <Link to={`/`}>
+                        <p className="btn btn-danger">Back to about page</p>
+                    </Link>
+                </div>
                 </>
                 : null}
             </form>

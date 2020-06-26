@@ -15,6 +15,7 @@ const Input = ({ field, type, value, handleChange, label, inputClass, groupClass
 Input.defaultProps = {
     inputClass: "form-control",
     groupClass: "form-group",
+    type: "text",
 }
 
 export default Input;

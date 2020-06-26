@@ -119,7 +119,6 @@ class Entry extends Component {
                             /*ternary so that groupClass is dependent on if abilityPick = true*/ 
                                     groupClass={(abilityPick ? "ability-pick " : "no-ability-pick") + " form-group"}
                                     field={`player${value}Name`}
-                                    type={"text"}
                                     value={playerNames[index]}
                                     handleChange={e => this.handleNameInput(e, index)}        
                             />

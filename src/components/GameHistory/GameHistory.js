@@ -15,7 +15,7 @@ const GameHistory = (
 
     return (
         <div className="container history-table">
-            <h3>Game History</h3>
+            <h3 className="instructions-heading">Game History</h3>
             <Loading loaded={games.length}>
                 <table class="table">
                     <thead>

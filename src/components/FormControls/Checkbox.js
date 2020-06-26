@@ -13,7 +13,7 @@ const Checkbox = ({ groupClass, label,  field, checked, handleChange, }) => (
     </div>
 );
 
-Input.defaultProps = {
+Checkbox.defaultProps = {
     groupClass: "form-check",
 }
 

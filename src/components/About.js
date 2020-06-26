@@ -11,7 +11,10 @@ const About = () => (
                 <li>Selection for team sizes ranging from 5-a-side up to 11-a-side</li>
                 <li>Random selection of teams</li>
                 <li>Option to provide player ability scores for balanced team selection</li>
-                <li>Copy feature so that you can easily copy the team details to paste into email, text messages etc</li>      
+                <li>Copy feature so that you can easily copy the team details to paste into email, text messages etc</li> 
+                <li>Save game details, including the game date and team names</li>  
+                <li>Update game details with the score, when the game is complete</li>  
+                <li>View the details from previous games</li>  
             </ul>
             <div className="central-button">
                 <Link to={`/team-details`}>

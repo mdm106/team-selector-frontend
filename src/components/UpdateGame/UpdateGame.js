@@ -105,7 +105,7 @@ class UpdateGame extends Component {
         
         return (
             <div className="container">
-                <h3 className="instructons-heading">Game details</h3>
+                <h3 className="instructions-heading">Update Game details</h3>
                 <Loading loaded={this.props.game}>
                 <form onSubmit={this.handleSubmit}>
                     <Input label={"Game date"}

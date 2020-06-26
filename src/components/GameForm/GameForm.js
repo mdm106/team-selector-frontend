@@ -89,20 +89,24 @@ class GameForm extends Component {
                            field={"team2Name"}
                            value={team2Name}
                            handleChange={this.handleTeam2Name} />
-                    <Input label={"Team 1 Score"}
-                           field={"team1Score"}
-                           type={"number"}
-                           value={team1Score}
-                           handleChange={this.handleTeam1Score} />
-                    <Input label={"Team 2 Score"}
-                           field={"team2Score"}
-                           type={"number"}
-                           value={team2Score}
-                           handleChange={this.handleTeam2Score} />
                     <Checkbox label={"Game completed?:"}
                           field={"gameComplete"}
                           checked={gameComplete}
                           handleChange={this.handleGameComplete} />
+                    {gameComplete ? 
+                    <>
+                        <Input label={"Team 1 Score"}
+                            field={"team1Score"}
+                            type={"number"}
+                            value={team1Score}
+                            handleChange={this.handleTeam1Score} />
+                        <Input label={"Team 2 Score"}
+                            field={"team2Score"}
+                            type={"number"}
+                            value={team2Score}
+                            handleChange={this.handleTeam2Score} />
+                    </>
+                    : null }
                     <Button type={"submit"}
                             message={"Submit"} />
                 </form>

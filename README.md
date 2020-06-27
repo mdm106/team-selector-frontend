@@ -37,7 +37,7 @@ Additional features implement in app:
     - This was added as a fun feature to allow the user to choose interesting player names. The names are held on an API to allow scope for the database to hold hundreds of team names.
 
 - Form for user to enter team details and post to API
-    - The form holds the team names for the game presently held in state, and the user can amend the team names and must add a date prior to saving to the API. As it is thought that immediately after selecting teams the score will not be known, the game complete field is set to default and the user can save the game without amending scores. If the API request is successful the user is shown a message to inform them and prompted to either return to home or view game history.
+    - The form holds the team names for the game presently held in state, and the user can amend the team names and must add a date prior to saving to the API. As it is thought that immediately after selecting teams the score will not be known, the game complete field is set to default and the user can save the game without amending scores. If the API request is successful the user is shown a message to inform them and prompted to either return to home or view game history. Validation is present which disables the submit button if the necessary data has not been completed, to prevent invalid api requests.
 
 - Form for user to update previously entered team details and send put request to API
     - The user can amend previously entered team details. If the user selects that the game is complete the team scores form inputs appear and the user can submit scores. Users are able to amend details for complete games in case of dispute about scores when team mates and opposition view the game history. The user is again shown a save successful message if the put request to the API is successful.
@@ -49,7 +49,14 @@ Plans for future features:
 - User message for when API requests have not been successful
 - Authorisation for users to make requests to API, and login feature on app
 - Recording of player names for each game, so that a league of players can be produced. This would involve many-to-many relationship between players and games
-- Use of a better algorithm than the greedy algorithm to select teams by ability
+- Functionality to allow a user to delete games
+
+## Improvements
+
+Improvements that I think could be made to the code base:
+- Use of a better algorithm than the greedy algorithm to select teams by ability. I think this would be a recursive function but as I had limited time I decided to concentrate on the app's functionality rather than trying to get the recursive function working.
+- Making the components more reuseable, including having one component for the post request for new game details and one for the put request for updating game details
+- The logic for selecting teams was placed in the state actions file. The reasoning for this was that the random assignment function was not a pure function and thus could not be in the reducer. I therefore also put the selecting by ability function in the state actions file for consistency. I found it difficult to know whether this was the right choice and it may be that the logic for selecting by ability should have been in the reducer.
 
 ## Technologies
 

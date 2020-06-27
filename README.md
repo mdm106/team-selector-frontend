@@ -49,7 +49,14 @@ Plans for future features:
 - User message for when API requests have not been successful
 - Authorisation for users to make requests to API, and login feature on app
 - Recording of player names for each game, so that a league of players can be produced. This would involve many-to-many relationship between players and games
-- Use of a better algorithm than the greedy algorithm to select teams by ability
+- Functionality to allow a user to delete games
+
+## Improvements
+
+Improvements that I think could be made to the code base:
+- Use of a better algorithm than the greedy algorithm to select teams by ability. I think this would be a recursive function but as I had limited time I decided to concentrate on the app's functionality rather than trying to get the recursive function working.
+- Making the components more reuseable, including having one component for the post request for new game details and one for the put request for updating game details
+- The logic for selecting teams was placed in the state actions file. The reasoning for this was that the random assignment function was not a pure function and thus could not be in the reducer. I therefore also put the selecting by ability function in the state actions file for consistency. I found it difficult to know whether this was the right choice and it may be that the logic for selecting by ability should have been in the reducer.
 
 ## Technologies
 

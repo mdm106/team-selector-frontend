@@ -41,7 +41,7 @@ class UpdateGame extends Component {
             this.props.handleLoad();
         }
     }
-
+    // component did update needed as API call occurs after first mount if user enters url without previously being on app and thus having a previous api call i.e. if go to url with gamesLoaded = false
     componentDidUpdate(prevProps) {
         if (this.props.game !== prevProps.game && this.props.game) {
             this.setState({

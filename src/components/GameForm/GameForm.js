@@ -73,8 +73,9 @@ class GameForm extends Component {
             gameComplete,
         } = this.state;
 
+        //variable used for determining validation message and button disabled status
         let formIncomplete = team1Name === "" | team2Name === "" | gameDate === "";
-
+        
         return (
             <div className="container">
                 <h3 className="instructons-heading">Game details</h3>
@@ -96,6 +97,7 @@ class GameForm extends Component {
                           field={"gameComplete"}
                           checked={gameComplete}
                           handleChange={this.handleGameComplete} />
+                    {/* ternary so inputs for scores only visible if game is complete */}
                     {gameComplete ? 
                     <>
                         <Input label={"Team 1 Score"}

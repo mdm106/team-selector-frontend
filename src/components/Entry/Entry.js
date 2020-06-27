@@ -11,7 +11,7 @@ class Entry extends Component {
 
         //creates array of numbers 1-n according to the teamSize, where n is total number of players
         let array = Array.from(Array(props.teamSize * 2), (_, i) => i + 1);
-        //if players already exist in state, local state is set to current state names and abilities
+        //if players already exist in state, local state is set to current state names and abilities, otherwise default values set
         let names = array.map(() => "");
         if(props.players.length !== 0) {
             names = props.players.map((player) => player.name);
@@ -84,6 +84,7 @@ class Entry extends Component {
         this.setState({formValid: (this.state.playerNamesComplete && this.state.playerNamesUnique) || this.state.reEntry });
     }
 
+    // below input handlers ensure name and ability are put in the correct index of names and rankings arrays
     handleNameInput(e, index) {
         let names = this.state.playerNames.slice();
         names[index] = e.currentTarget.value;

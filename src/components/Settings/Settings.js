@@ -109,6 +109,7 @@ class Settings extends Component {
             nameConfirmed,
         } = this.state;
 
+        //Presentation of name picker buttons and team name form inputs dependent on user selections that control namePicked and nameConfirmed state items
         return (
             <div className="container">
             <h3 className="instructions-heading">Team Details</h3>

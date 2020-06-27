@@ -7,6 +7,7 @@ import Copy from "../Copy";
 
 const Selection = ({ team1Name, team2Name, teams, abilityPick, handleAmend }) => {
 
+    // the two team arrays mapped over to show details for each team. Ability details only shown if abilityPick was set to true in settings form
     return (
         <div className="container">
         <h2>Your team selection is:</h2>

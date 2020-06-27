@@ -19,36 +19,37 @@ MVP:
 
 Additional features implement in app:
 - Functionality to select teams of n-size
-The user can select a team size from 3-11 in the settings form. The selection determines how many name spaces appear on the name entry form.
+    - The user can select a team size from 3-11 in the settings form. The selection determines how many name spaces appear on the name entry form.
 
 - Functionality to select teams based on ability to produce as balanced teams as possible
-The user ticks a checkbox to say whether they would like to select teams based on ability. If this checkbox is ticked a range bar appears alongside player names in the name entry form. The range is from 0-100, and 50 is default. If the user chooses to select by ability but then leaves all abilities as the default, the app will assign players using the randomised function rather than the by ability function. The greedy algorithm was used to select teams based on ability.
+    - The user ticks a checkbox to say whether they would like to select teams based on ability. If this checkbox is ticked a range bar appears alongside player names in the name entry form. The range is from 0-100, and 50 is default. If the user chooses to select by ability but then leaves all abilities as the default, the app will assign players using the randomised function rather than the by ability function. The greedy algorithm was used to select teams based on ability.
 
 - Validation of input 
-Validation was added such that a message appears and the submit button is disabled if the user has not added all the player names or if a player name is duplicated. When the user has entered valid names, a message appears to ask the user to submit, and the button is enabled. There is no requirement for the user to select abilities prior to submission, in case they change their mind about using the ability feature when faced with the task of selecting abilities.
+    - Validation was added such that a message appears and the submit button is disabled if the user has not added all the player names or if a player name is duplicated. When the user has entered valid names, a message appears to ask the user to submit, and the button is enabled. There is no requirement for the user to select abilities prior to submission, in case they change their mind about using the ability feature when faced with the task of selecting abilities.
 
 - Functionality to allow user to amend team details after submission
-After submission and viewing their teams, the user can go back to the form and see their previously entered data, and amend as they wish.
+    - After submission and viewing their teams, the user can go back to the form and see their previously entered data, and amend as they wish.
 
 - Copy to clipboard button to allow user to copy team details for use in messaging, email etc
-The pre-built copy-to-clipboard component was used for this feature. As this feature is intented to allow the user to paste the teams and send to their friends, I did not include the player abilities in the copied text.
+    - The pre-built copy-to-clipboard component was used for this feature. As this feature is intented to allow the user to paste the teams and send to their friends, I did not include the player abilities in the copied text.
 
 - Name picker tool to randomly assign user with team names requested from an API
-This was added as a fun feature to allow the user to choose interesting player names. The names are held on an API to allow scope for the database to hold hundreds of team names.
+    - This was added as a fun feature to allow the user to choose interesting player names. The names are held on an API to allow scope for the database to hold hundreds of team names.
 
 - Form for user to enter team details and post to API
-The form holds the team names for the game presently held in state, and the user can amend the team names and must add a date prior to saving to the API. As it is thought that immediately after selecting teams the score will not be known, the game complete field is set to default and the user can save the game without amending scores. If the API request is successful the user is shown a message to inform them and prompted to either return to home or view game history.
+    - The form holds the team names for the game presently held in state, and the user can amend the team names and must add a date prior to saving to the API. As it is thought that immediately after selecting teams the score will not be known, the game complete field is set to default and the user can save the game without amending scores. If the API request is successful the user is shown a message to inform them and prompted to either return to home or view game history.
 
 - Form for user to update previously entered team details and send put request to API
-The user can amend previously entered team details. If the user selects that the game is complete the team scores form inputs appear and the user can submit scores. Users are able to amend details for complete games in case of dispute about scores when team mates and opposition view the game history. The user is again shown a save successful message if the put request to the API is successful.
+    - The user can amend previously entered team details. If the user selects that the game is complete the team scores form inputs appear and the user can submit scores. Users are able to amend details for complete games in case of dispute about scores when team mates and opposition view the game history. The user is again shown a save successful message if the put request to the API is successful.
 
 - Game history feature to allow user to view previously entered games and link to the update form for each game
-The game history shows previous team game dates, team names and scores. There is a link for each game so that the user can update details if necessary. The game history appears in ascending date order, regardless of the date order in which the user enters games.
+    - The game history shows previous team game dates, team names and scores. There is a link for each game so that the user can update details if necessary. The game history appears in ascending date order, regardless of the date order in which the user enters games.
 
 Plans for future features:
 - User message for when API requests have not been successful
 - Authorisation for users to make requests to API, and login feature on app
 - Recording of player names for each game, so that a league of players can be produced. This would involve many-to-many relationship between players and games
+- Use of a better algorithm than the greedy algorithm to select teams by ability
 
 ## Technologies
 

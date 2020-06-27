@@ -23,7 +23,7 @@ const GameHistory = (
                             <th scope="col">Game Date</th>
                             <th scope="col">Team Names</th>
                             <th scope="col">Score</th>
-                            <th scope="col">Click link update</th>
+                            <th scope="col">Click link to update</th>
                         </tr>
                     </thead>
                     <tbody>

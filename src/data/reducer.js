@@ -16,7 +16,7 @@ const saveSettingsReducer = (state,
 
 const savePlayersReducer = (state, { randomisedTeams, equalisedTeams, players }) => {
         
-    let notFifty = randomisedTeams.filter(player => player.ability !== 50);
+    let notFifty = randomisedTeams.filter(player => player.ability !== 50); // to make randomised teams be used if the user did not change any of the abilities away from the default of 50
 
     return {
         ...state,

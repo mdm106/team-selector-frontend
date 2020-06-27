@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/team-selector-frontend/static/css/main.1a71a358.chunk.css",
+    "main.js": "/team-selector-frontend/static/js/main.3da0742d.chunk.js",
+    "main.js.map": "/team-selector-frontend/static/js/main.3da0742d.chunk.js.map",
+    "runtime-main.js": "/team-selector-frontend/static/js/runtime-main.e46b5cbc.js",
+    "runtime-main.js.map": "/team-selector-frontend/static/js/runtime-main.e46b5cbc.js.map",
+    "static/js/2.2e8f5377.chunk.js": "/team-selector-frontend/static/js/2.2e8f5377.chunk.js",
+    "static/js/2.2e8f5377.chunk.js.map": "/team-selector-frontend/static/js/2.2e8f5377.chunk.js.map",
+    "index.html": "/team-selector-frontend/index.html",
+    "precache-manifest.5b8d0e9d293a8cae49c4157a457952bd.js": "/team-selector-frontend/precache-manifest.5b8d0e9d293a8cae49c4157a457952bd.js",
+    "service-worker.js": "/team-selector-frontend/service-worker.js",
+    "static/css/main.1a71a358.chunk.css.map": "/team-selector-frontend/static/css/main.1a71a358.chunk.css.map",
+    "static/js/2.2e8f5377.chunk.js.LICENSE.txt": "/team-selector-frontend/static/js/2.2e8f5377.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/team-selector-frontend/static/media/evening.31a3620c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e46b5cbc.js",
+    "static/js/2.2e8f5377.chunk.js",
+    "static/css/main.1a71a358.chunk.css",
+    "static/js/main.3da0742d.chunk.js"
+  ]
+}

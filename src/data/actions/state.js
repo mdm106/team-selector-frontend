@@ -86,7 +86,7 @@ export const updateEntries = ({ playerNames, playerAbilities, totalPlayers }) =>
         type: "SAVE_PLAYERS",
         randomisedTeams: randomTeams(players),
         equalisedTeams: equalTeams(players),
-        players: players.sort((a,b) => a.id - b.id),
+        players: players.sort((a,b) => a.id - b.id), // to ensure players are in the correct order if user returns to form to amend details
     };
 }
 

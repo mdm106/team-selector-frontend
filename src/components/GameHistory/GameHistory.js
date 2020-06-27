@@ -23,7 +23,7 @@ const GameHistory = (
                             <th scope="col">Game Date</th>
                             <th scope="col">Team Names</th>
                             <th scope="col">Score</th>
-                            <th scope="col">Click link update</th>
+                            <th scope="col">Click link to update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,7 +31,7 @@ const GameHistory = (
                             <tr key={index} >
                                 <td>{game.game_date}</td>
                                     <td>{`${game.team_1} | ${game.team_2}`}</td>
-                                {game.game_complete===0 ?
+                                {!game.game_complete ?
                                     <td>--</td> : 
                                     <td>{ `${game.team_1_score} - ${game.team_2_score}` }</td> }
                                 <td>

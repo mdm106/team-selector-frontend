@@ -5,7 +5,6 @@ import Input from "../FormControls/Input";
 import Checkbox from "../FormControls/Checkbox";
 import Button from "../Buttons/Button";
 import Loading from "../Loading";
-import FourOhFour from "../FourOhFour";
 
 class UpdateGame extends Component {
     constructor(props) {

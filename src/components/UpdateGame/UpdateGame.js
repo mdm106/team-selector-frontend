@@ -5,14 +5,12 @@ import Input from "../FormControls/Input";
 import Checkbox from "../FormControls/Checkbox";
 import Button from "../Buttons/Button";
 import Loading from "../Loading";
-import FourOhFour from "../FourOhFour";
 
 class UpdateGame extends Component {
     constructor(props) {
         super(props);
 
         let game = {};
-        let gamesLoaded = false;
 
         if(this.props.game) {
             game = this.props.game; 
@@ -96,8 +94,7 @@ class UpdateGame extends Component {
 
     render() {
 
-        let { gamesLoaded,
-              gameDate,
+        let { gameDate,
               team1Name,
               team2Name,
               team1Score,

@@ -1,6 +1,6 @@
 # Team Selector App
 
-This app was produced to fulfill the brief of the individual technical challenge set at the end of the DevelopMe Fellowship. This is the repo for the front-end of the app. The app can be viewed [here].
+This app was produced to fulfill the brief of the individual technical challenge set at the end of the DevelopMe Fellowship. This is the repo for the front-end of the app. The app can be viewed [here](https://mdm106.github.io/team-selector-frontend/#/).
 
 The app utilises an API on the back-end, and the repository for this can be found [here](https://github.com/mdm106/team-selector-backend). The production endpoint is set up on the app, and is as follows: https://stark-ravine-35553.herokuapp.com/
 

@@ -17,7 +17,7 @@ const GameHistory = (
         <div className="container history-table">
             <h3 className="instructions-heading">Game History</h3>
             <Loading loaded={games.length}>
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
                             <th scope="col">Game Date</th>

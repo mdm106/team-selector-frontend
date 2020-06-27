@@ -73,6 +73,8 @@ class GameForm extends Component {
             gameComplete,
         } = this.state;
 
+        let formIncomplete = team1Name === "" | team2Name === "" | gameDate === "";
+
         return (
             <div className="container">
                 <h3 className="instructons-heading">Game details</h3>
@@ -108,8 +110,14 @@ class GameForm extends Component {
                             handleChange={this.handleTeam2Score} />
                     </>
                     : null }
+                    <div className="formErrors">
+                        <p className="alert">
+                            {formIncomplete ? "Please complete team names and game date" : "Game can be submitted!"}
+                        </p>
+                    </div> 
                     <Button type={"submit"}
-                            message={"Submit"} />
+                            message={"Submit"}
+                            disabled={formIncomplete} />
                 </form>
                 <Link to={`/`}>
                     <p className="btn btn-primary">Back to Home</p>

@@ -11,7 +11,6 @@ class UpdateGame extends Component {
         super(props);
 
         let game = {};
-        let gamesLoaded = false;
 
         if(this.props.game) {
             game = this.props.game; 
@@ -95,8 +94,7 @@ class UpdateGame extends Component {
 
     render() {
 
-        let { gamesLoaded,
-              gameDate,
+        let { gameDate,
               team1Name,
               team2Name,
               team1Score,

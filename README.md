@@ -18,6 +18,8 @@ MVP:
 - App that takes 10 names and randomly assigns them to two separate teams of 5 each.
 
 Additional features implement in app:
+- About page to provide details to user about the app's features.
+
 - Functionality to select teams of n-size
     - The user can select a team size from 3-11 in the settings form. The selection determines how many name spaces appear on the name entry form.
 
@@ -40,16 +42,19 @@ Additional features implement in app:
     - The form holds the team names for the game presently held in state, and the user can amend the team names and must add a date prior to saving to the API. As it is thought that immediately after selecting teams the score will not be known, the game complete field is set to default and the user can save the game without amending scores. If the API request is successful the user is shown a message to inform them and prompted to either return to home or view game history. Validation is present which disables the submit button if the necessary data has not been completed, to prevent invalid api requests.
 
 - Form for user to update previously entered team details and send put request to API
-    - The user can amend previously entered team details. If the user selects that the game is complete the team scores form inputs appear and the user can submit scores. Users are able to amend details for complete games in case of dispute about scores when team mates and opposition view the game history. The user is again shown a save successful message if the put request to the API is successful.
+    - The user can amend previously entered team details. If the user selects that the game is complete the team scores form inputs appear and the user can submit scores. Users are able to amend details for complete games in case of dispute about scores when team mates and opposition view the game history. The user is again shown a save successful message if the put request to the API is successful. 
 
 - Game history feature to allow user to view previously entered games and link to the update form for each game
     - The game history shows previous team game dates, team names and scores. There is a link for each game so that the user can update details if necessary. The game history appears in ascending date order, regardless of the date order in which the user enters games.
+
+- API requests have been set up so if the user goes to URLs without first going to the reset of the app, the API request will be made and there will not be an error. If the user tries to go to the url for a game id that does not exist, the user will see the loading page with a message advising them to return to home.
 
 Plans for future features:
 - User message for when API requests have not been successful
 - Authorisation for users to make requests to API, and login feature on app
 - Recording of player names for each game, so that a league of players can be produced. This would involve many-to-many relationship between players and games
 - Functionality to allow a user to delete games
+- Pagination of game history table
 
 ## Improvements
 
@@ -57,6 +62,8 @@ Improvements that I think could be made to the code base:
 - Use of a better algorithm than the greedy algorithm to select teams by ability. I think this would be a recursive function but as I had limited time I decided to concentrate on the app's functionality rather than trying to get the recursive function working.
 - Making the components more reuseable, including having one component for the post request for new game details and one for the put request for updating game details
 - The logic for selecting teams was placed in the state actions file. The reasoning for this was that the random assignment function was not a pure function and thus could not be in the reducer. I therefore also put the selecting by ability function in the state actions file for consistency. I found it difficult to know whether this was the right choice and it may be that the logic for selecting by ability should have been in the reducer.
+- I think I could have used better CSS class naming, and it would have been better to use a naming structure such as BEM. I also didn't fully understand how best to customise bootstrap CSS which meant I sometimes had to use the important attribute to override bootstrap styling which I know isn't ideal.
+- I think it is possible that the number of times API requests are made could be slimmed down, by making better use of the data already in state
 
 ## Technologies
 

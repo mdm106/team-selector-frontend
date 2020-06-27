@@ -11,7 +11,7 @@ const GameHistory = (
 ) => {
     useEffect(() => {
         handleLoad()
-    }, [])
+    }, [handleLoad])
 
     return (
         <div className="container history-table">

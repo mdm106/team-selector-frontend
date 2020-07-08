@@ -60,7 +60,7 @@ Plans for future features:
 
 Improvements that I think could be made to the code base:
 - Use of a better algorithm than the greedy algorithm to select teams by ability. I think this would be a recursive function but as I had limited time I decided to concentrate on the app's functionality rather than trying to get the recursive function working.
-- Making the components more reuseable, including having one component for the post request for new game details and one for the put request for updating game details
+- Making the components more reuseable, including having one component for the post request for new game details and for the put request for updating game details
 - The logic for selecting teams was placed in the state actions file. The reasoning for this was that the random assignment function was not a pure function and thus could not be in the reducer. I therefore also put the selecting by ability function in the state actions file so that both functions were together. I found it difficult to know whether this was the right choice and it may be that the logic for selecting by ability should have been in the reducer.
 - I think I could have used better CSS class naming, and it would have been better to use a naming structure such as BEM. I also didn't fully understand how best to customise bootstrap CSS. This meant I sometimes had to use the 'important' attribute to override bootstrap styling which is not ideal.
 - I think it is possible that the number and size of API requests could be reduced, by making more use of the data already in state

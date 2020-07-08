@@ -71,7 +71,7 @@ As the MVP did not require records to be saved, but would involve the management
 
 ## Version Management
 
-I used git and GitHub throughout the project. I used the Gitflow Workflow, by working on feature branches that were merged back into master using pull requests.
+I used git and GitHub throughout the project. I used the Feature Branch Workflow, by working on feature branches that were merged back into master using pull requests.
 
 # How to install the project:
 

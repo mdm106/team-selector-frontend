@@ -17,8 +17,8 @@ let makePlayers = (keys, names, abilities) => {
 /// to randomly shuffle an array, using Fishers-Yates Algorithm
 let randomTeams = (array) => {
     for(let i = array.length -1; i > 0; i -= 1) {
-        const j = Math.floor(Math.random() * i);
-        const temporary = array[i];
+        let j = Math.floor(Math.random() * i);
+        let temporary = array[i];
         array[i] = array[j];
         array[j] = temporary;
     }

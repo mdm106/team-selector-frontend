@@ -78,9 +78,9 @@ class UpdateGame extends Component {
     }
 
     handleGameComplete(e) {
-        const target = e.target;
-        const value = target.name === 'gameComplete' ? target.checked : target.value;
-        const name = target.name;
+        let target = e.target;
+        let value = target.checked;
+        let name = target.name;
 
         this.setState({
             [name]: value

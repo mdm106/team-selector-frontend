@@ -132,12 +132,15 @@ class Settings extends Component {
              {namePicked ? 
              <ul className="team-name-list">
                 <h4>Your team names are:</h4>
-                    <li>
-                        <h5>{this.props.team1Name}</h5>
-                    </li>
-                    <li>
-                        <h5>{this.props.team2Name}</h5>
-                    </li>
+                    {this.props.team1Name === "Team 1" ? <p>Loading...</p> :
+                    <>
+                        <li>
+                            <h5>{this.props.team1Name}</h5>
+                        </li>
+                        <li>
+                            <h5>{this.props.team2Name}</h5>
+                        </li>
+                    </>}
              </ul> : null }
             <form>
                 {!namePicked ?

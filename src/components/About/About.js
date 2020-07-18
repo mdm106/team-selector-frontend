@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const About = () => (
+import Button from "../Buttons/Button";
+
+const About = ({ handleStart }) => (
     <div className="container">
         <h5>Team Selector helps you quickly and fairly pick your teams. Less time organising, more time winning.</h5>
         <br/>
@@ -17,9 +19,9 @@ const About = () => (
                 <li>View the details from previous games</li>  
             </ul>
             <div className="central-button">
-                <Link to={`/team-details`}>
-                        <p className="btn btn-primary">Get selecting!</p>
-                </Link>
+                    <Button className={"primary"}
+                            message={"Get selecting!"}
+                            onClick={handleStart} />
             </div>
             <div className="central-button">
                 <Link to={`/game-history`}>
